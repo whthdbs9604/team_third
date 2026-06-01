@@ -1,0 +1,22 @@
+//메인 컬러 설정
+$main-color:#CD2027;
+$main-dark:#A30910;
+$title_font: 'bm_dohyeonregular', sans-serif;
+
+@mixin title_mix {
+    font-family: 'bm_dohyeonregular', sans-serif;
+    font-size: 20px;
+    display: block;
+    font-weight: normal !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    //@include title_mix (사용할때)
+}
+
+.poster_title{@include title_mix}
+
+.header_sub{
+    h1{position: relative;}
+    button{position: absolute; left: 20px; top: 50%; transform: translateY(-50%);z-index: 2;}
+}

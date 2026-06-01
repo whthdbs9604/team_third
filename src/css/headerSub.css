@@ -1,0 +1,20 @@
+.poster_title {
+  font-family: "bm_dohyeonregular", sans-serif;
+  font-size: 20px;
+  display: block;
+  font-weight: normal !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header_sub h1 {
+  position: relative;
+}
+.header_sub button {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}/*# sourceMappingURL=headerSub.css.map */
