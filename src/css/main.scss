@@ -1,0 +1,124 @@
+//메인 컬러 설정
+$main-color:#CD2027;
+$main-dark:#A30910;
+$title_font: 'bm_dohyeonregular', sans-serif;
+
+@mixin title_mix {
+    font-family: 'bm_dohyeonregular', sans-serif;
+    font-size: 20px;
+    display: block;
+    font-weight: normal !important;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    //@include title_mix (사용할때)
+}
+
+.swiper-slide {
+  /* 슬라이드가 가질 수 있는 최대 너비를 부모 영역에 맞추거나 고정 */
+  max-width: 100%; 
+}
+
+.poster_title{@include title_mix}
+
+header{
+    text-align: center;height: 56px;line-height: 56px; position: fixed; width: 100%; top: 0; z-index: 2;
+    a {display:inline-block;}
+    h1{font-size: 15px;}
+}
+
+#navigation{
+    height: 56px;text-align: center;width: 100%; background: white; position: fixed; bottom: 0;z-index: 5;padding-bottom: env(safe-area-inset-bottom);box-sizing: content-box; 
+    ul{display: grid;grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr; font-size: 11px;align-items: center; height: 56px; padding: 0 24px;}
+    ul li a{display: block;}
+}
+//autoplay={{ delay: 5000, disableOnInteraction: false }} modules={[Autoplay]}
+#main_slide{
+    .swiper-slide{position: relative;color: white;}
+    .swiper-slide .main_link>img{width: 100%;}
+    .swiper-slide .main_link div{position: absolute;bottom: 24px; left: 20px;}
+    .main_link div h2{font-size: 32px;}
+    .main_link div span{margin-right: 8px;}
+    .main_link div p:first-child{color: $main-color; font-weight: 500;}
+    .main_link div p:first-child:after{content: ""; background: linear-gradient(to right, rgba(205, 32, 39, 1) 0%, rgba(205, 32, 39, 0) 100%); height: 2px; width: 100px; display: block; margin-bottom: 8px;}
+    .main_link div p:nth-child(6){padding: 8px 0;}
+    .main_link div p:nth-child(6):before{content: ""; background: linear-gradient(to right, rgba(205, 32, 39, 1) 0%, rgba(205, 32, 39, 0) 100%); height: 2px; width: 100px; display: block; margin-bottom: 16px;}
+    .main_link div a{background: $main-dark; padding:12px ; margin: 16px 0 24px; display: flex; border-radius: 5px; justify-content: space-between;}
+    .main_link div a img{margin-left: 32px; width: 18px;}
+}
+
+#enjoy{
+    padding: 40px 20px 50px;
+    ul{display: flex;justify-content:space-between;margin-top: 24px; text-align: center;}
+    img{ border-radius: 100%; display: inline-block; width: 100%;object-fit: cover;}
+    a p{margin-top: 8px;}
+}
+
+#rank{
+    padding: 0px 20px 50px;
+
+    >p{display: flex;}
+    p>a{margin-left: auto;}
+    ul li{padding: 16px 0;}
+    ul li a{display: flex;align-items: center;}
+    ul li a h4{@include title_mix; font-weight: normal; font-size: 22px; margin-bottom: 24px;}
+    ul li a>span{font-size: 18px; font-weight: bold;}
+    ul li a>img{display: inline-block; background: #eee; margin: 0 16px;aspect-ratio:3/4;width: 30%;}
+}
+
+#event_banner{margin-bottom: 50px;
+    img{width: 100%;}
+}
+
+#discount{
+    >h3{padding: 0 20px;}
+    >p{display: flex;padding: 0 20px;}
+    p>a{margin-left: auto;text-align: center;}
+    margin-bottom: 50px;   
+    
+    .swiper_box{margin-left: 20px;}
+    div.swiper{
+        margin-top: 24px;
+    }
+    a{display: block;}
+    a>div{display: flex; align-items: center;}
+    a div span{display: block;}
+    a>div>span{font-size: 18px; font-weight: bold;}
+    a>div>div{text-align: right; margin-left: auto;}
+    a>div>div span del{font-size: 12px;text-align: right;}
+    a>img{display: block;aspect-ratio:3/4;width: 100%;object-fit: cover;}
+    a>p{font-family: $title_font; font-weight: bold; margin-top: 8px;}
+
+}
+
+#genre{
+    padding: 0 20px;
+    margin-bottom: 50px;
+    >p{display: flex;}
+    p>a{margin-left: auto;}
+    ul{display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;}
+    li a{display: inline-block; width: 100%;}
+    li a>img{display: inline-block; width: 100%; background: #eee;aspect-ratio:3/4;}
+
+    .genre_btn{margin: 16px 0 24px;}
+    .genre_btn span{padding: 4px 12px;display: inline-block; border: 1px solid #333; border-radius: 100px;}
+}
+
+#short_video{
+    >p{display: flex;}
+    p>a{margin-left: auto;}
+    >h3, >p{padding: 0 20px;}
+    div.swiper{margin-top: 24px;}
+    .swiper-slide>a{display: block;position: relative;}
+    .swiper-slide a>img{display: inline-block; width: 100%; background: #eee;}
+    a .video_title{position: absolute; bottom: 16px; left: 16px;}
+    .swiper-slide{transform: scale(.9); transition: .5s;}
+    .swiper-slide-active{transform: scale(1);}
+}
+
+footer{
+    margin-top: 50px;
+    border-top:1px solid #333;
+    padding: 24px 16px 80px;
+    background: #eee;
+}
