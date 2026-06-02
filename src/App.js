@@ -6,6 +6,7 @@ import MainPage from './components/MainPage';
 import SubPage from './components/SubPage';
 import Home from './main/Home'
 import Menu from './sub/Menu'
+import Login from './sub/Login'
 
 
 function App() {
@@ -15,11 +16,12 @@ function App() {
         <Routes>
 
         <Route element={<MainPage />}>
-        <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
         </Route>
 
         <Route element={<SubPage />}>
-        <Route path="/menu" element={<Menu title="메뉴" />} /> 
+            <Route path="/menu" element={<Menu title="메뉴" />} /> 
+            <Route path="/login" element={<Login title="로그인" />} /> 
         </Route>
 
       </Routes>
