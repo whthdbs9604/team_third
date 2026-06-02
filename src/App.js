@@ -1,30 +1,21 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import './css/reset.css'
-import './App.css';
-import './css/main.css';
-import MainPage from './components/MainPage';
-import SubPage from './components/SubPage';
-import Home from './main/Home'
-import Menu from './sub/Menu'
+import BottomSheetCalendar from "./BottomSheetCalendar";
+import { SEAT_INFO } from "./seatData";
 
 
 function App() {
+
   return (
-    <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <div className="App">
 
-        <Routes>
 
-        <Route element={<MainPage />}>
-        <Route path="/" element={<Home />} />
-        </Route>
-
-        <Route element={<SubPage />}>
-        <Route path="/menu" element={<Menu title="메뉴" />} /> 
-        </Route>
-
-      </Routes>
-
-    </BrowserRouter>
+       <BottomSheetCalendar
+       seatInfo={SEAT_INFO}
+        onConfirm={(date) => {
+          console.log("선택된 날짜:", date);
+          alert(`${date.year}년 ${date.month + 1}월 ${date.date}일 예매 진행!`);
+        }}
+      />
+    </div>
   );
 }
 
