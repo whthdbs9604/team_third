@@ -1,0 +1,18 @@
+@use '../css/headerSub.scss' as *;
+
+#login_wrap{
+    padding: 60px 20px 0;
+    h3{text-align: center; padding: 40px 0 32px;}
+
+    #login_form{
+        p{text-align: center;}
+        p>a{margin-left: 16px; text-decoration: underline; font-weight: 500;}
+        legend{display: none;}
+        label{display: block; color: #787878; font-size: 14px; margin-bottom: 8px;}
+        label:nth-child(4){margin-top: 16px;}
+        input{width: 100%; padding: 16px 8px; border: 1px solid #C3C3C3; border-radius: 3px;}
+        #button input{margin-top: 56px; background: $main-color; color: white; border: none; padding: 18px 8px; font-size: 16px; font-weight: bold; margin-bottom: 16px;}
+        #member_search{text-align: center; margin-bottom: 40px; color: #787878; font-size: 14px;}
+        #member_search a:first-child::after{content: "|"; display: inline-block; padding: 0 8px; color: #E4E4E4;}
+    }
+}
