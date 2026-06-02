@@ -4,7 +4,7 @@ function HeaderSub({ title }) {
   return (
     <header className="header_sub">
         
-        <button onClick={() => window.history.back()}>뒤로가기</button>
+        <button onClick={() => window.history.back()}><img src={`${process.env.PUBLIC_URL}/img/back.svg`} /></button>
         
         <h1>{title}</h1> 
       

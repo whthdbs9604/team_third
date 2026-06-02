@@ -5,7 +5,7 @@ $title_font: 'bm_dohyeonregular', sans-serif;
 
 @mixin title_mix {
     font-family: 'bm_dohyeonregular', sans-serif;
-    font-size: 20px;
+    font-size: 18px;
     display: block;
     font-weight: normal !important;
     white-space: nowrap;
@@ -23,8 +23,9 @@ $title_font: 'bm_dohyeonregular', sans-serif;
 
 header{
     text-align: center;height: 56px;line-height: 56px; position: fixed; width: 100%; top: 0; z-index: 2;
-    a {display:inline-block;}
-    h1{font-size: 15px;}
+    a {display:inline-block;height: 56px;}
+    h1{font-size: 15px; font-weight: 500;height: 56px;}
+    a .logo_img{ margin-top: 5px;}
 }
 
 #navigation{
@@ -59,9 +60,10 @@ header{
 
     >p{display: flex;}
     p>a{margin-left: auto;}
+    p>a img{vertical-align: text-top;}
     ul li{padding: 16px 0;}
     ul li a{display: flex;align-items: center;}
-    ul li a h4{@include title_mix; font-weight: normal; font-size: 22px; margin-bottom: 24px;}
+    ul li a h4{@include title_mix; font-weight: normal; font-size: 20px; margin-bottom: 24px;}
     ul li a>span{font-size: 18px; font-weight: bold;}
     ul li a>img{display: inline-block; background: #eee; margin: 0 16px;aspect-ratio:3/4;width: 30%;}
 }
@@ -74,6 +76,7 @@ header{
     >h3{padding: 0 20px;}
     >p{display: flex;padding: 0 20px;}
     p>a{margin-left: auto;text-align: center;}
+    p>a img{vertical-align: text-top;}
     margin-bottom: 50px;   
     
     .swiper_box{margin-left: 20px;}
@@ -96,6 +99,7 @@ header{
     margin-bottom: 50px;
     >p{display: flex;}
     p>a{margin-left: auto;}
+    p>a img{vertical-align: text-top;}
     ul{display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;}
     li a{display: inline-block; width: 100%;}
     li a>img{display: inline-block; width: 100%; background: #eee;aspect-ratio:3/4;}
@@ -107,6 +111,7 @@ header{
 #short_video{
     >p{display: flex;}
     p>a{margin-left: auto;}
+    p>a img{vertical-align: text-top;}
     >h3, >p{padding: 0 20px;}
     div.swiper{margin-top: 24px;}
     .swiper-slide>a{display: block;position: relative;}

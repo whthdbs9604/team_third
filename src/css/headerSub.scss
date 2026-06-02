@@ -18,5 +18,5 @@ $title_font: 'bm_dohyeonregular', sans-serif;
 
 .header_sub{
     h1{position: relative;}
-    button{position: absolute; left: 20px; top: 50%; transform: translateY(-50%);z-index: 2;}
+    button{position: absolute; left: 20px; top: 50%; transform: translateY(-50%);z-index: 2; background: none; border: none; outline: none;}
 }

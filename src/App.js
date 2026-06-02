@@ -15,11 +15,11 @@ function App() {
         <Routes>
 
         <Route element={<MainPage />}>
-        <Route path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
         </Route>
 
         <Route element={<SubPage />}>
-        <Route path="/menu" element={<Menu title="메뉴" />} /> 
+            <Route path="/menu" element={<Menu title="메뉴" />} /> 
         </Route>
 
       </Routes>
