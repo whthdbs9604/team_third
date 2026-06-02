@@ -34,6 +34,7 @@
 }
 #mypage_wrap .event_banner {
   padding: 0 20px 32px;
+  border-bottom: 8px solid #F6F6F6;
 }
 #mypage_wrap .event_banner a {
   background: #eee;
