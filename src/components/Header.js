@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// import $ from 'jquery';
 
 
 export default function Header() {

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-// import { Swiper, SwiperSlide } from 'swiper/react';
+
 import 'swiper/css';
 
 export default function EventBanner() {
