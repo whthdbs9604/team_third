@@ -5,8 +5,6 @@ import EventBanner from "./EventBanner";
 import Discount from "./Discount"
 import Genre from "./Genre";
 import ShortVideo from "./ShortVideo"
-import Header from "../components/Header"
-import Navigation from "../components/Navigation"
 
 export default function Home() {
 
