@@ -8,6 +8,7 @@ import Home from './main/Home'
 import Menu from './sub/Menu'
 import Login from './sub/Login'
 import MyPage from './sub/MyPage'
+import Booking from './sub/Booking'
 
 
 function App() {
@@ -23,7 +24,8 @@ function App() {
         <Route element={<SubPage />}>
             <Route path="/menu" element={<Menu title="메뉴" />} /> 
             <Route path="/login" element={<Login title="로그인" />} /> 
-            <Route path="/mypage" element={<MyPage title="마이페이지" />} /> 
+            <Route path="/mypage" element={<MyPage title="마이페이지" />} />
+            <Route path="/booking" element={<Booking title="예매 정보 입력" />} />
         </Route>
 
       </Routes>
