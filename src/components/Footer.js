@@ -9,10 +9,10 @@ export default function Footer() {
                 <p>고객센터 1588 - 0000 (평일 9~18시)</p>
 
                 <div>
-                    <Link href="#">이용약관</Link>
-                    <Link href="#">개인정보 처리방침</Link>
-                    <Link href="#">청소년 보호정책</Link>
-                    <Link href="#">사업자 정보</Link>
+                    <Link to="#">이용약관</Link>
+                    <Link to="#">개인정보 처리방침</Link>
+                    <Link to="#">청소년 보호정책</Link>
+                    <Link to="#">사업자 정보</Link>
                 </div>
 
                 <small>©2016 대학로티켓닷컴 ALL Right reserved.</small>

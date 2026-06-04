@@ -4,7 +4,7 @@ export default function Genre() {
     return(
         <div id="genre">
         <h3>장르별 공연</h3>
-        <p>관심있는 장르를 선택해보세요.<Link href="#"><span>더보기<img src={`${process.env.PUBLIC_URL}/img/arrow_icon.svg`} alt="화살표 아이콘"/></span></Link></p>
+        <p>관심있는 장르를 선택해보세요.<Link to="#"><span>더보기<img src={`${process.env.PUBLIC_URL}/img/arrow_icon.svg`} alt="화살표 아이콘"/></span></Link></p>
         
 
         <div className="genre_btn">
@@ -13,7 +13,7 @@ export default function Genre() {
 
         <ul>
             <li>
-                <Link href="#">
+                <Link to="#">
                     <img src={`${process.env.PUBLIC_URL}/img/poster_1.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
                         <h4 className="poster_title">죽여주는 이야기</h4>
@@ -24,7 +24,7 @@ export default function Genre() {
             </li>
 
             <li>
-                <Link href="#">
+                <Link to="#">
                     <img src={`${process.env.PUBLIC_URL}/img/poster_2.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
                         <h4 className="poster_title">죽여주는 이야기</h4>
@@ -35,7 +35,7 @@ export default function Genre() {
             </li>
 
             <li>
-                <Link href="#">
+                <Link to="#">
                     <img src={`${process.env.PUBLIC_URL}/img/poster_3.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
                         <h4 className="poster_title">죽여주는 이야기</h4>
@@ -46,7 +46,7 @@ export default function Genre() {
             </li>
 
             <li>
-                <Link href="#">
+                <Link to="#">
                     <img src={`${process.env.PUBLIC_URL}/img/poster_1.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
                         <h4 className="poster_title">죽여주는 이야기</h4>
