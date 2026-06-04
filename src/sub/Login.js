@@ -31,11 +31,11 @@ export default function Login({title}) {
                         </div>
 
                         <div id="member_search">
-                            <Link href="id_input.php">아이디 찾기</Link>
-                            <Link href="pw_input.php">비밀번호 찾기</Link>
+                            <Link to="id_input.php">아이디 찾기</Link>
+                            <Link to="pw_input.php">비밀번호 찾기</Link>
                         </div>
 
-                        <p>아직 계정이 없으신가요? <Link href="member_form.php">회원가입</Link></p>
+                        <p>아직 계정이 없으신가요? <Link to="member_form.php">회원가입</Link></p>
 
                     </fieldset>
                 </form>
