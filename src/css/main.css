@@ -6,7 +6,7 @@
 
 .poster_title {
   font-family: "bm_dohyeonregular", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   display: block;
   font-weight: normal !important;
   white-space: nowrap;
@@ -25,9 +25,15 @@ header {
 }
 header a {
   display: inline-block;
+  height: 56px;
 }
 header h1 {
   font-size: 15px;
+  font-weight: 500;
+  height: 56px;
+}
+header a .logo_img {
+  margin-top: 5px;
 }
 
 #navigation {
@@ -136,6 +142,9 @@ header h1 {
 #rank p > a {
   margin-left: auto;
 }
+#rank p > a img {
+  vertical-align: text-top;
+}
 #rank ul li {
   padding: 16px 0;
 }
@@ -145,14 +154,14 @@ header h1 {
 }
 #rank ul li a h4 {
   font-family: "bm_dohyeonregular", sans-serif;
-  font-size: 20px;
+  font-size: 18px;
   display: block;
   font-weight: normal !important;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   font-weight: normal;
-  font-size: 22px;
+  font-size: 20px;
   margin-bottom: 24px;
 }
 #rank ul li a > span {
@@ -184,6 +193,9 @@ header h1 {
 #discount p > a {
   margin-left: auto;
   text-align: center;
+}
+#discount p > a img {
+  vertical-align: text-top;
 }
 #discount {
   margin-bottom: 50px;
@@ -239,6 +251,9 @@ header h1 {
 #genre p > a {
   margin-left: auto;
 }
+#genre p > a img {
+  vertical-align: text-top;
+}
 #genre ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -269,6 +284,9 @@ header h1 {
 }
 #short_video p > a {
   margin-left: auto;
+}
+#short_video p > a img {
+  vertical-align: text-top;
 }
 #short_video > h3, #short_video > p {
   padding: 0 20px;

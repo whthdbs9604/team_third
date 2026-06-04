@@ -1,0 +1,79 @@
+.poster_title {
+  font-family: "bm_dohyeonregular", sans-serif;
+  font-size: 18px;
+  display: block;
+  font-weight: normal !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.header_sub h1 {
+  position: relative;
+}
+.header_sub button {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: none;
+  border: none;
+  outline: none;
+}
+
+#login_wrap {
+  padding: 60px 20px 0;
+}
+#login_wrap h3 {
+  text-align: center;
+  padding: 40px 0 32px;
+}
+#login_wrap #login_form p {
+  text-align: center;
+}
+#login_wrap #login_form p > a {
+  margin-left: 16px;
+  text-decoration: underline;
+  font-weight: 500;
+}
+#login_wrap #login_form legend {
+  display: none;
+}
+#login_wrap #login_form label {
+  display: block;
+  color: #787878;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+#login_wrap #login_form label:nth-child(4) {
+  margin-top: 16px;
+}
+#login_wrap #login_form input {
+  width: 100%;
+  padding: 16px 8px;
+  border: 1px solid #C3C3C3;
+  border-radius: 3px;
+}
+#login_wrap #login_form #button input {
+  margin-top: 56px;
+  background: #CD2027;
+  color: white;
+  border: none;
+  padding: 18px 8px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+#login_wrap #login_form #member_search {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #787878;
+  font-size: 14px;
+}
+#login_wrap #login_form #member_search a:first-child::after {
+  content: "|";
+  display: inline-block;
+  padding: 0 8px;
+  color: #E4E4E4;
+}/*# sourceMappingURL=login.css.map */

@@ -24,7 +24,7 @@ export default function MainSlide() {
                                     어쩌다 한 집?!<br/>
                                     버라이어티 현실 공감 로맨스!
                                 </p>
-                                <Link href="/">예매하기<img src={`${process.env.PUBLIC_URL}/img/big_arrow.svg`} alt="큰화살표" /></Link>
+                                <Link href="/booking">예매하기<img src={`${process.env.PUBLIC_URL}/img/big_arrow.svg`} alt="큰화살표" /></Link>
                             </div>
                         </Link>
                     </SwiperSlide>
