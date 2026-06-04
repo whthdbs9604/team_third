@@ -1,6 +1,7 @@
-import styles from "./BookingComplete.module.css";
-import { useNavigate } from "react-router-dom";
-import throwThumbnail from "./image/throw-thumnail.jpg";
+import styles from "../css/BookingComplete.module.css";
+import { useNavigate, useOutletContext } from "react-router-dom";
+import { useEffect } from "react";
+import throwThumbnail from "../image/throw-thumnail.jpg";
 
 export default function BookingComplete({
   category = "연극",
@@ -12,6 +13,12 @@ export default function BookingComplete({
   bookingNumber = "2151351-135451",
 }) {
   const navigate = useNavigate();
+  const { setHeaderTitle } = useOutletContext();
+
+  useEffect(() => {
+    setHeaderTitle("티켓 예매");
+  }, [setHeaderTitle]);
+
 
   return (
     <div className={styles.page}>
