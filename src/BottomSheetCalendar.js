@@ -1,6 +1,7 @@
 import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react"; 
 import styles from "./BottomSheetCalendar.module.css";
+import { useNavigate } from "react-router-dom";
 
 const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"];
 const MONTHS = ["1월","2월","3월","4월","5월","6월","7월","8월","9월","10월","11월","12월"];
@@ -23,6 +24,7 @@ export default function BottomSheetCalendar({
   seatInfo = {},
   onConfirm,
 }) {
+  const navigate = useNavigate();
   const today = {
     year: new Date().getFullYear(),
     month: new Date().getMonth(),
@@ -92,6 +94,13 @@ export default function BottomSheetCalendar({
     return cells;
   }
 
+  function getDnumClass(active, isSel, dow) {
+  if (isSel)     return `${styles.dnum} ${styles.dnumSelected}`;
+  if (!active)   return `${styles.dnum} ${styles.dnumDisabled}`;
+  if (dow === 0) return `${styles.dnum} ${styles.dnumSun}`;
+  return `${styles.dnum} ${styles.dnumActive}`;
+}
+
   function renderFooter() {
     if (!selected) {
       return <p className={styles.footerEmpty}>날짜를 먼저 선택해주세요</p>;
@@ -99,19 +108,25 @@ export default function BottomSheetCalendar({
     const seats = seatInfo[dateKey(selected.year, selected.month, selected.date)] || 0;
     const dt = new Date(selected.year, selected.month, selected.date);
     const few = seats <= 5;
+    
+    function handleNext() {
+      onConfirm?.(selected);
+      setIsOpen(false);
+      navigate("");
+    }
+
     return (
-      <button 
-        className={styles.footerActionBtn} 
-        onClick={() => {
-          onConfirm?.(selected);
-          setIsOpen(false);
-        }}
-      >
+      <button className={styles.footerActionBtn} onClick={handleNext}>
         <span className={styles.footerDate}>
-          {selected.year}년 {MONTHS[selected.month]} {selected.date}일 ({DAYS_KO[dt.getDay()]}) 19시
+          {selected.year}년 {MONTHS[selected.month]} {selected.date}일
+          ({DAYS_KO[dt.getDay()]}) 19시
         </span>
         <span className={styles.footerSeats}>
-          전석 <span style={{ fontWeight: 600, color: few ? "#e05a5a" : "#1D9E75" }}>{seats}석</span> 남음
+          전석{" "}
+          <span className={few ? styles.seatsNumFew : styles.seatsNumOk}>
+            {seats}석
+          </span>{" "}
+          남음
         </span>
       </button>
     );
@@ -134,26 +149,17 @@ export default function BottomSheetCalendar({
           <button className={styles.xBtn} onClick={() => setIsOpen(false)}>
             <X size={20} strokeWidth={1} />
           </button>
-
           <div className={styles.monthNav}>
-            {/* 왼쪽 화살표: 대화 나눴던 고급스러운 은은한 그레이 조건부 스타일 적용 */}
             <button
-              className={styles.navBtn}
-              style={{ 
-                borderColor: isAtBase ? "#e4e4e4" : "#e2e8f0", 
-                color: isAtBase ? "#cbd5e1" : "#787878",       
-                cursor: isAtBase ? "not-allowed" : "pointer" 
-              }}
+              className={`${styles.navBtn} ${isAtBase ? styles.navBtnDisabled : ""}`}
               onClick={() => changeMonth(-1)}
               disabled={isAtBase}
             >
               <ChevronLeft size={18} strokeWidth={1} />
             </button>
-            
             <span className={styles.monthTitle}>
               {curYear}년 {MONTHS[curMonth]}
             </span>
-            
             <button className={styles.navBtn} onClick={() => changeMonth(1)}>
               <ChevronRight size={18} strokeWidth={1} />
             </button>
@@ -164,31 +170,24 @@ export default function BottomSheetCalendar({
 
         <div className={styles.weekRow}>
           {WEEKDAYS.map((w, i) => (
-            <div key={w} className={styles.wday} style={{ color: i === 0 ? "#e05a5a" : "#aaa" }}>{w}</div>
+            <div key={w} className={`${styles.wday} ${i === 0 ? styles.wdaySun : ""}`}>{w}
+            </div>
           ))}
         </div>
 
-        <div className={styles.calGrid}>
+         <div className={styles.calGrid}>
           {buildDays().map((cell) => {
             if (cell.type === "empty") return <div key={cell.key} />;
             const { date, dow, active, isSel } = cell;
-            const textColor = isSel ? "#fff" : !active ? "#d0d0d0" : dow === 0 ? "#e05a5a" : "#111";
             return (
               <div key={cell.key} className={styles.dcell}>
-                <button disabled={!active && !isSel}
+                <button
+                  disabled={!active && !isSel}
                   onClick={() => {
-                  if (active) {
-                  setSelected({ year: curYear, month: curMonth, date });
-                  }
+                    if (active) setSelected({ year: curYear, month: curMonth, date });
                   }}
-                className={styles.dnum}
-                style={{
-                  background: isSel ? "#111" : "transparent",
-                  color: textColor,
-                  fontWeight: active || isSel ? 500 : 400,
-                  cursor: active ? "pointer" : "not-allowed",
-                }}
-                  >
+                  className={getDnumClass(active, isSel, dow)}
+                >
                   {date}
                 </button>
               </div>

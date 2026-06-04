@@ -234,3 +234,51 @@
 .grayDot {
   background-color: #8e8e93; 
 }
+
+.seatsNumOk  { font-weight: 600; color: #1D9E75; }
+.seatsNumFew { font-weight: 600; color: #e05a5a; }
+
+.dnumDisabled {
+  color: #d0d0d0;
+  cursor: not-allowed;
+  font-weight: 400;
+}
+
+.dnumActive {
+  color: #111;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.dnumActive:hover {
+  background: #f0f0f0;
+}
+
+.wdaySun {
+  color: #e05a5a;
+}
+
+.dnumSun {
+  color: #e05a5a;
+  font-weight: 500;
+  cursor: pointer;
+}
+.dnumSun:hover {
+  background: #fdf0f0;
+}
+
+.dnumSelected {
+  background: #111;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+}
+.dnumSelected:hover {
+  background: #333;
+}
+
+.navBtnDisabled {
+  border-color: #e4e4e4;
+  color: #cbd5e1;
+  cursor: not-allowed;
+}
