@@ -8,10 +8,10 @@ import Home from './main/Home'
 import Menu from './sub/Menu'
 import Login from './sub/Login'
 import MyPage from './sub/MyPage'
-import BottomSheetCalendar from "./BottomSheetCalendar";
-import { SEAT_INFO } from "./seatData";
+import BottomSheetCalendar from "./sub/BottomSheetCalendar";
+import { SEAT_INFO } from "./sub/seatData";
 import Booking from './sub/Booking'
-import BookingComplete from "./BookingComplete";
+import BookingComplete from "./sub/BookingComplete";
 
 function App() {
 
