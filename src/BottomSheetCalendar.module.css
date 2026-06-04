@@ -144,6 +144,7 @@
   align-items: center;
   justify-content: center;
   font-family: inherit;
+  background: transparent; 
   transition: background 0.12s, color 0.12s;
 }
 
@@ -240,7 +241,6 @@
 
 .dnumDisabled {
   color: #d0d0d0;
-  cursor: not-allowed;
   font-weight: 400;
 }
 
@@ -263,12 +263,13 @@
   font-weight: 500;
   cursor: pointer;
 }
+
 .dnumSun:hover {
   background: #fdf0f0;
 }
 
 .dnumSelected {
-  background: #111;
+  background: #8e8e93;
   color: #fff;
   font-weight: 500;
   cursor: pointer;
@@ -280,5 +281,4 @@
 .navBtnDisabled {
   border-color: #e4e4e4;
   color: #cbd5e1;
-  cursor: not-allowed;
 }
