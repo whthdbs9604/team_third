@@ -1,0 +1,207 @@
+/*  페이지 전체 */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px 40px;
+  font-family: 'Pretendard', -apple-system, sans-serif;
+}
+
+/* 상단 완료 영역 */
+.topSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 0 24px;
+  gap: 14px;
+}
+
+.checkCircle {
+  width: 71px;
+  height: 71px;
+  border-radius: 50%;
+  background: #A30910;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+
+.completeTitle {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000000;
+  margin: 0;
+}
+
+.completeSubtitle {
+  font-size: 14px;
+  color: #aaa;
+  margin: 0;
+}
+
+/*구분선 */
+.divider {
+  width: 100vw;
+  margin-left: -16px;
+  height: 1px;
+  background: #E3E3E3;
+  margin-bottom: 24px;
+}
+
+/* 카드*/
+.card {
+  width: 100%;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+  padding-top: 16px;
+  margin: 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+
+
+/* 공연 정보 행  */
+.showRow {
+  margin: 0 16px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding-bottom: 18px;
+}
+
+
+
+.thumbnailImg {
+  width: 60px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.showInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.category {
+  font-size: 12px;
+  color: #787878;
+  letter-spacing: -0.2px;
+}
+
+.showTitle {
+  font-size: 18px;
+  font-weight: 700;
+  color: #000000;
+  letter-spacing: -0.5px;
+}
+
+/*  카드 내부 구분선  */
+
+.cardDivider {
+  height: 1px;
+  background: #e4e4e4;
+  margin: 4px 10px;
+}
+
+.cardDividerDashed {
+  border: none;
+  border-top: 1px dashed #e3e3e3;
+  margin: 4px 0;
+}
+
+
+/*  정보 행  */
+.infoList {
+  display: flex;
+  flex-direction: column;
+}
+
+.infoRow {
+  margin: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 0;
+}
+
+.infoLabel {
+  font-size: 14px;
+  color: #787878;
+  letter-spacing: -0.2px;
+}
+
+.infoValue {
+  font-size: 14px;
+  color: #000000;
+  letter-spacing: -0.2px;
+  font-weight: 700;
+}
+
+.seatValue {
+  font-weight: 700;
+}
+
+.bookingNum {
+  font-size: 15px;
+  font-weight: 700;
+  color: #111;
+  letter-spacing: 0.5px;
+}
+
+/*  하단 버튼  */
+.btnRow {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  margin-top: 24px;
+}
+
+.btnOutline {
+  flex: 1;
+  height: 60px;
+  padding: 14px 0;
+  border: 1px solid #e3e3e3;
+  border-radius: 3px;
+  background: #fff;
+  font-size: 15px;
+  font-weight: 500;
+  color: #000000;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: -0.3px;
+  transition: background 0.1s;
+}
+.btnOutline:active {
+  background: #f5f5f5;
+}
+
+.btnFill {
+  flex: 1.4;
+  padding: 14px 0;
+  border: none;
+  border-radius: 3px;
+  background: #A30910;
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  letter-spacing: -0.3px;
+  transition: background 0.1s;
+}
+.btnFill:active {
+  background: #222;
+}
+
+.lastinfoRow {
+  margin: 18px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
