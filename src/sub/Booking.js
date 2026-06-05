@@ -1,3 +1,4 @@
+ import { Link } from "react-router-dom"
 import { useEffect, useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import '../css/booking.css';
@@ -225,7 +226,7 @@ export default function Booking({ title }) {
 
             {/* 예매하기 버튼 */}
             <div className="booking_submit_wrap">
-                <button className="booking_submit_btn">예매하기</button>
+                <Link to="/booking/complete" className="booking_submit_btn">예매 완료</Link>
             </div>
 
         </div>

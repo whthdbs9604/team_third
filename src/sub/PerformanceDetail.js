@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { Link, useOutletContext } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -246,7 +247,8 @@ function TicketSection() {
                 </div>
                 <div className="ticket_right">
                     <strong>30,000원</strong>
-                    <Link to="/booking">예매하기</Link>
+                    <Link to="calendar">예매 하기</Link>
+                    <Outlet />
                 </div>
             </div>
         </section>

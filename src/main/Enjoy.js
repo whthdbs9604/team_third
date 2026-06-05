@@ -7,7 +7,7 @@ export default function Enjoy() {
             <p>관람 동반자에 어울리는 공연을 추천드려요.</p>
             <ul className="enjoy_btn">
 
-                <li><Link to="/calendar-test"><img src={`${process.env.PUBLIC_URL}/img/date_icon.png`} alt="데이트 아이콘"/><p>데이트</p></Link></li>
+                <li><Link to="/"><img src={`${process.env.PUBLIC_URL}/img/date_icon.png`} alt="데이트 아이콘"/><p>데이트</p></Link></li>
                 <li><Link to="/"><img src={`${process.env.PUBLIC_URL}/img/friend_icon.png`} alt="친구와 아이콘"/><p>친구와</p></Link></li>
                 <li><Link to="/"><img src={`${process.env.PUBLIC_URL}/img/family_icon.png`} alt="가족과 아이콘"/><p>가족과</p></Link></li>
                 <li><Link to="/"><img src={`${process.env.PUBLIC_URL}/img/alone_icon.png`} alt="혼자서 아이콘"/><p>혼자서</p></Link></li>
