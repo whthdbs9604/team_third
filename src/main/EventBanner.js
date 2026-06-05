@@ -5,7 +5,7 @@ import 'swiper/css';
 export default function EventBanner() {
     return(
         <div id="event_banner">
-            <Link to="/"><img src={`${process.env.PUBLIC_URL}/img/event_banner.png`} alt="이벤트 배너 이미지"/></Link>
+            <Link to="/detail"><img src={`${process.env.PUBLIC_URL}/img/event_banner.png`} alt="이벤트 배너 이미지"/></Link>
         </div>
     )
 }
