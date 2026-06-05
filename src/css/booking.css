@@ -386,6 +386,7 @@
     font-weight: 700;
     cursor: pointer;
     letter-spacing: 0.5px;
+    text-align: center;
 }
 
 .booking_submit_btn:active {
