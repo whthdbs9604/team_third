@@ -13,7 +13,7 @@ export default function Discout() {
             <div className="swiper_box">
                 <Swiper slidesPerView={2.8} modules={[FreeMode]} spaceBetween={12} freeMode={true}>
                     <SwiperSlide>
-                        <Link to="/" className="discount_link">
+                        <Link to="/detail" className="discount_link">
                             <img src={`${process.env.PUBLIC_URL}/img/poster_1.png`} alt="포스터 이미지"/>
                             <p className="poster_title">죽여주는 이야기</p>
                             <div>
@@ -27,7 +27,7 @@ export default function Discout() {
                     </SwiperSlide>
 
                     <SwiperSlide>
-                        <Link to="/" className="discount_link">
+                        <Link to="/detail" className="discount_link">
                             <img src={`${process.env.PUBLIC_URL}/img/poster_2.png`} alt="포스터 이미지"/>
                             <p className="poster_title">죽여주는 이야기</p>
                             <div>
@@ -41,7 +41,7 @@ export default function Discout() {
                     </SwiperSlide>
 
                     <SwiperSlide>
-                        <Link to="/" className="discount_link">
+                        <Link to="/detail" className="discount_link">
                             <img src={`${process.env.PUBLIC_URL}/img/poster_3.png`} alt="포스터 이미지"/>
                             <p className="poster_title">죽여주는 이야기</p>
                             <div>
@@ -55,7 +55,7 @@ export default function Discout() {
                     </SwiperSlide>
 
                     <SwiperSlide>
-                        <Link to="/" className="discount_link">
+                        <Link to="/detail" className="discount_link">
                             <img src={`${process.env.PUBLIC_URL}/img/poster_4.png`} alt="포스터 이미지"/>
                             <p className="poster_title">죽여주는 이야기</p>
                             <div>
@@ -69,7 +69,7 @@ export default function Discout() {
                     </SwiperSlide>
 
                     <SwiperSlide>
-                        <Link to="/" className="discount_link">
+                        <Link to="/detail" className="discount_link">
                             <img src={`${process.env.PUBLIC_URL}/img/poster_5.png`} alt="포스터 이미지"/>
                             <p className="poster_title">죽여주는 이야기</p>
                             <div>
@@ -83,7 +83,7 @@ export default function Discout() {
                     </SwiperSlide>
 
                     <SwiperSlide>
-                        <Link to="/" className="discount_link">
+                        <Link to="/detail" className="discount_link">
                             <img src={`${process.env.PUBLIC_URL}/img/poster_1.png`} alt="포스터 이미지"/>
                             <p className="poster_title">죽여주는 이야기</p>
                             <div>

@@ -12,6 +12,7 @@ import BottomSheetCalendar from "./sub/BottomSheetCalendar";
 import { SEAT_INFO } from "./sub/seatData";
 import Booking from './sub/Booking'
 import BookingComplete from "./sub/BookingComplete";
+import PerformanceDetail from './sub/PerformanceDetail';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
 
             <Route path="/booking" element={<Booking title="예매 정보 입력" />} />
             <Route path="/booking/complete" element={<BookingComplete />} />
+            <Route path="/detail" element={<PerformanceDetail title="공연 상세" />} />
         </Route>
         
       </Routes>
