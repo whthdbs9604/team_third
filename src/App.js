@@ -8,10 +8,11 @@ import Home from './main/Home'
 import Menu from './sub/Menu'
 import Login from './sub/Login'
 import MyPage from './sub/MyPage'
-import BottomSheetCalendar from "./BottomSheetCalendar";
-import { SEAT_INFO } from "./seatData";
+import BottomSheetCalendar from "./sub/BottomSheetCalendar";
+import { SEAT_INFO } from "./sub/seatData";
 import Booking from './sub/Booking'
-import BookingComplete from "./BookingComplete";
+import BookingComplete from "./sub/BookingComplete";
+import PerformanceDetail from './sub/PerformanceDetail';
 
 function App() {
 
@@ -40,6 +41,7 @@ function App() {
 
             <Route path="/booking" element={<Booking title="예매 정보 입력" />} />
             <Route path="/booking/complete" element={<BookingComplete />} />
+            <Route path="/detail" element={<PerformanceDetail title="공연 상세" />} />
         </Route>
         
       </Routes>

@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import { ChevronLeft, ChevronRight, X } from "lucide-react"; 
-import styles from "./BottomSheetCalendar.module.css";
+import styles from "../css/BottomSheetCalendar.module.css";
 import { useNavigate } from "react-router-dom";
 
 const WEEKDAYS = ["일", "월", "화", "수", "목", "금", "토"];
@@ -31,7 +31,7 @@ export default function BottomSheetCalendar({
     date: new Date().getDate(),
   };
 
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const [curYear, setCurYear] = useState(today.year);
   const [curMonth, setCurMonth] = useState(today.month);
   const [selected, setSelected] = useState(null);

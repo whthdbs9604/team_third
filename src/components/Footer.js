@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function Footer() {
       return (
             <footer>
-                <img src={`${process.env.PUBLIC_URL}/img/logo.svg`} alt="로고 이미지" />
+                <img src={`${process.env.PUBLIC_URL}/img/logo.png`} alt="로고" />
                 <p>서울특별시 종로구 대학로 12길</p>
                 <p>사업자등록번호 123-45-67890</p>
                 <p>고객센터 1588 - 0000 (평일 9~18시)</p>
