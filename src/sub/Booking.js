@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useOutletContext, useNavigate } from 'react-router-dom';
 import '../css/booking.css';
 
 function CheckIcon({ color }) {
@@ -57,6 +57,7 @@ function Stepper({ value, onChange }) {
 export default function Booking({ title }) {
 
     const { setHeaderTitle } = useOutletContext();
+    const navigate = useNavigate();
     useEffect(() => {
         setHeaderTitle(title);
         const nav = document.getElementById('navigation');
@@ -256,6 +257,7 @@ export default function Booking({ title }) {
                 <button
                     className={`booking_submit_btn ${isActive ? 'active' : ''}`}
                     disabled={!isActive}
+                    onClick={() => navigate('/booking/complete')}
                 >
                     예매하기
                 </button>

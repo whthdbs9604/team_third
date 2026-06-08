@@ -1,14 +1,14 @@
 import styles from "../css/BookingComplete.module.css";
 import { useNavigate, useOutletContext } from "react-router-dom";
 import { useEffect } from "react";
-import throwThumbnail from "../image/throw-thumnail.jpg";
+import throwThumbnail from "../image/oktapbang_thumnail.png";
 
 export default function BookingComplete({
   category = "연극",
-  title = "쓰로우",
-  date = "2026.05.21(목)",
+  title = "옥탑방 고양이",
+  date = "2026.06.18(목)",
   time = "19:30",
-  venue = "아르코꿈발극장",
+  venue = "대학로 틴틴홀",
   seat = "균일석 1석",
   bookingNumber = "2151351-135451",
 }) {
