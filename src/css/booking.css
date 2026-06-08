@@ -13,7 +13,7 @@
 }
 
 /* ===== 헤더 ===== */
-/* .header_sub {
+.header_sub {
     text-align: center;
     height: 56px;
     line-height: 56px;
@@ -24,7 +24,7 @@
     z-index: 10;
     background: #fff;
     border-bottom: 1px solid #F0F0F0;
-} */
+}
 
 .header_sub h1 {
     font-size: 16px;
@@ -280,10 +280,20 @@
     color: #333;
 }
 
-.total_amount_box strong {
+.total_amount_box strong.total_price_red {
     font-size: 20px;
     font-weight: 700;
-    color: #111;
+    color: #CD2027;
+}
+
+/* 미입력 안내 문구 */
+.missing_message {
+    background: #FFF5F5;
+    color: #CD2027;
+    font-size: 13px;
+    padding: 10px 20px;
+    text-align: center;
+    border-top: 1px solid #FFCDD2;
 }
 
 .payment_btns {
