@@ -31,6 +31,7 @@ import posterPerfect from '../assets/detail/나의완벽한로맨스_포스터.g
 import posterSpring from '../assets/detail/봄날의로맨스_포스터.png';
 import posterOffice from '../assets/detail/사내연애보고서_포스터.jpg';
 
+
 const dates = [
     { day: '월', date: '9', time: '오후 7:30' },
     { day: '화', date: '10', time: '오후 7:30' },
