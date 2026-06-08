@@ -20,6 +20,10 @@
   background: none;
   border: none;
   outline: none;
+  padding: 0;
+}
+.header_sub button img {
+  vertical-align: middle;
 }
 
 .before_login_top {
