@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useOutletContext, useNavigate } from 'react-router-dom';
+import { useOutletContext } from 'react-router-dom';
 import '../css/booking.css';
 
 function CheckIcon({ color }) {
@@ -57,7 +57,6 @@ function Stepper({ value, onChange }) {
 export default function Booking({ title }) {
 
     const { setHeaderTitle } = useOutletContext();
-    const navigate = useNavigate();
     useEffect(() => {
         setHeaderTitle(title);
         const nav = document.getElementById('navigation');
@@ -212,7 +211,7 @@ export default function Booking({ title }) {
                 <h2 className="section_title">결제수단</h2>
                 <div className="total_amount_box">
                     <span>총 결제금액</span>
-                    <strong>{totalPrice.toLocaleString()}원</strong>
+                    <strong className="total_price_red">{totalPrice.toLocaleString()}원</strong>
                 </div>
                 <div className="payment_btns">
                     <button className="payment_btn">신용카드</button>
@@ -257,7 +256,6 @@ export default function Booking({ title }) {
                 <button
                     className={`booking_submit_btn ${isActive ? 'active' : ''}`}
                     disabled={!isActive}
-                    onClick={() => navigate('/booking/complete')}
                 >
                     예매하기
                 </button>
