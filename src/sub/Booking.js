@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useOutletContext, useNavigate } from 'react-router-dom';
 import '../css/booking.css';
 
 function CheckIcon({ color }) {
@@ -57,8 +57,14 @@ function Stepper({ value, onChange }) {
 export default function Booking({ title }) {
 
     const { setHeaderTitle } = useOutletContext();
+    const navigate = useNavigate();
     useEffect(() => {
         setHeaderTitle(title);
+        const nav = document.getElementById('navigation');
+        if (nav) nav.style.display = 'none';
+        return () => {
+            if (nav) nav.style.display = '';
+        };
     }, [title, setHeaderTitle]);
 
     const [counts, setCounts] = useState({
@@ -76,6 +82,9 @@ export default function Booking({ title }) {
         marketing: false,
     });
 
+    const [name, setName] = useState('');
+    const [tel, setTel] = useState('');
+
     const handleCount = (type, value) => {
         setCounts(prev => ({ ...prev, [type]: value }));
     };
@@ -87,6 +96,12 @@ export default function Booking({ title }) {
         counts.artpass * 15000;
 
     const totalCount = counts.regular + counts.weekday + counts.earlybird + counts.artpass;
+
+    const isActive =
+        name.trim() !== '' &&
+        tel.trim() !== '' &&
+        totalCount > 0 &&
+        agrees.privacy && agrees.age && agrees.refund;
 
     const handleAllAgree = () => {
         const next = !agrees.all;
@@ -162,19 +177,33 @@ export default function Booking({ title }) {
             <section className="booking_section">
                 <div className="section_title_row">
                     <h2 className="section_title">예약자 정보</h2>
-                    <span className="required_note">*는 필수 입력 사항입니다.</span>
+                    <span className="required_note"><span className="required_star">*</span>는 필수 입력 사항입니다.</span>
                 </div>
                 <div className="input_group">
-                    <label className="input_label" htmlFor="booker_name">이름*</label>
-                    <input className="input_field" type="text" id="booker_name" />
+                    <label className="input_label" htmlFor="booker_name">이름<span className="required_star">*</span></label>
+                    <input
+                        className="input_field"
+                        type="text"
+                        id="booker_name"
+                        placeholder="이름을 입력해주세요"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                    />
                 </div>
                 <div className="input_group">
-                    <label className="input_label" htmlFor="booker_tel">연락처*</label>
-                    <input className="input_field" type="tel" id="booker_tel" />
+                    <label className="input_label" htmlFor="booker_tel">연락처<span className="required_star">*</span></label>
+                    <input
+                        className="input_field"
+                        type="tel"
+                        id="booker_tel"
+                        placeholder="숫자만 입력해주세요"
+                        value={tel}
+                        onChange={(e) => setTel(e.target.value)}
+                    />
                 </div>
                 <div className="input_group">
                     <label className="input_label" htmlFor="booker_email">이메일</label>
-                    <input className="input_field" type="email" id="booker_email" />
+                    <input className="input_field" type="email" id="booker_email" placeholder="이메일을 입력해주세요" />
                 </div>
             </section>
 
@@ -225,7 +254,13 @@ export default function Booking({ title }) {
 
             {/* 예매하기 버튼 */}
             <div className="booking_submit_wrap">
-                <button className="booking_submit_btn">예매하기</button>
+                <button
+                    className={`booking_submit_btn ${isActive ? 'active' : ''}`}
+                    disabled={!isActive}
+                    onClick={() => navigate('/booking/complete')}
+                >
+                    예매하기
+                </button>
             </div>
 
         </div>

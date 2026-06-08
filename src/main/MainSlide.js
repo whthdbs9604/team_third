@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+﻿ import { Link } from "react-router-dom"
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
@@ -8,7 +8,7 @@ export default function MainSlide() {
             <div className="swiper_box">
                 <Swiper slidesPerView={1} loop={true}>
                     <SwiperSlide>
-                        <Link className="main_link">
+                        <Link to="/detail" className="main_link">
                             <img src={`${process.env.PUBLIC_URL}/img/main_slide_1.png`} alt="메인 슬라이드 이미지" />
                             <div>
                                 <p>ROMANTIC COMEDY</p>
@@ -24,7 +24,7 @@ export default function MainSlide() {
                                     어쩌다 한 집?!<br/>
                                     버라이어티 현실 공감 로맨스!
                                 </p>
-                                <Link to="/booking">예매하기<img src={`${process.env.PUBLIC_URL}/img/big_arrow.svg`} alt="큰화살표" /></Link>
+                                <Link href="/">예매하기<img src={`${process.env.PUBLIC_URL}/img/big_arrow.svg`} alt="큰화살표" /></Link>
                             </div>
                         </Link>
                     </SwiperSlide>

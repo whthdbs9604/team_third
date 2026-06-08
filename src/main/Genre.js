@@ -13,7 +13,7 @@ export default function Genre() {
 
         <ul>
             <li>
-                <Link to="#">
+                <Link to="/detail">
                     <img src={`${process.env.PUBLIC_URL}/img/poster_1.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
                         <h4 className="poster_title">죽여주는 이야기</h4>
@@ -24,7 +24,7 @@ export default function Genre() {
             </li>
 
             <li>
-                <Link to="#">
+                <Link to="/detail">
                     <img src={`${process.env.PUBLIC_URL}/img/poster_2.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
                         <h4 className="poster_title">죽여주는 이야기</h4>
@@ -35,7 +35,7 @@ export default function Genre() {
             </li>
 
             <li>
-                <Link to="#">
+                <Link to="/detail">
                     <img src={`${process.env.PUBLIC_URL}/img/poster_3.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
                         <h4 className="poster_title">죽여주는 이야기</h4>
@@ -46,7 +46,7 @@ export default function Genre() {
             </li>
 
             <li>
-                <Link to="#">
+                <Link to="/detail">
                     <img src={`${process.env.PUBLIC_URL}/img/poster_1.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
                         <h4 className="poster_title">죽여주는 이야기</h4>

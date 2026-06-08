@@ -9,7 +9,7 @@ export default function Rank() {
 
         <ul>
             <li>
-                <Link to="#">
+                <Link to="/detail">
                     <span>1</span>
                     <img src={`${process.env.PUBLIC_URL}/img/poster_1.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
@@ -22,7 +22,7 @@ export default function Rank() {
             </li>
 
             <li>
-                <Link to="#">
+                <Link to="/detail">
                     <span>2</span>
                     <img src={`${process.env.PUBLIC_URL}/img/poster_2.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
@@ -35,7 +35,7 @@ export default function Rank() {
             </li>
 
             <li>
-                <Link to="#">
+                <Link to="/detail">
                     <span>3</span>
                     <img src={`${process.env.PUBLIC_URL}/img/poster_3.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
