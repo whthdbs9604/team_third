@@ -29,9 +29,11 @@ header{
 }
 
 #navigation{
-    height: 56px;text-align: center;width: 100%; background: white; position: fixed; bottom: 0;z-index: 5;padding-bottom: env(safe-area-inset-bottom);box-sizing: content-box; 
-    ul{display: grid;grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr; font-size: 11px;align-items: center; height: 56px; padding: 0 24px;}
+    height: 56px;text-align: center;width: 100%; background: white; position: fixed; bottom: 0;z-index: 5;padding-bottom: env(safe-area-inset-bottom);box-sizing: content-box; background: url(../../public/img/nav_bg.png) no-repeat center / cover;
+    ul{display: grid;grid-template-columns: 1fr 1fr 1.5fr 1fr 1fr; font-size: 11px;align-items: center; height: 56px; padding: 0 24px; position: relative;}
     ul li a{display: block;}
+    .nav_circle{position: absolute;bottom: 28px;left: 50%;transform: translateX(-50%);z-index: -1;}
+    .nav_home{transform: translateY(-28px); a{display: inline-block;}}
 }
 //autoplay={{ delay: 5000, disableOnInteraction: false }} modules={[Autoplay]}
 #main_slide{
@@ -154,9 +156,90 @@ header{
     .swiper-slide-active{transform: scale(1);}
 }
 
+.detail_footer > strong {
+		font-family: "bm_dohyeonregular", sans-serif !important;
+		font-weight: normal;
+	}
+
 footer{
     margin-top: 50px;
-    border-top:1px solid #333;
-    padding: 24px 16px 80px;
-    background: #eee;
+    // background: #eee;
+    padding: 24px 20px 104px;
+	background: #fafafa;
+	color: #777;
+	border-top: 1px solid #ededed;
+	font-family: "Pretendard Variable", "Pretendard", sans-serif;
+	
+	> strong {
+		display: block;
+		margin-bottom: 6px;
+		color: #cd2027;
+		font-size: 27px;
+		line-height: 1.2;
+	}
+	
+	small {
+		color: #999;
+		font-size: 11px;
+	}
+
+
+.footer_intro {
+	margin-bottom: 12px;
+	color: #333;
+	font-size: 12.5px;
+	font-weight: 800;
 }
+
+.footer_info {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	margin-bottom: 13px;
+	font-size: 12px;
+	line-height: 1.5;
+}
+
+.footer_channels {
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	margin-bottom: 13px;
+	
+	a {
+		width: 24px;
+		height: 24px;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		border: 1px solid #ededed;
+		border-radius: 50%;
+		background: #fff;
+		color: #cd2027;
+		font-size: 11px;
+		font-weight: 900;
+		text-align: center;
+	}
+}
+
+.footer_terms {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px 10px;
+	margin-bottom: 10px;
+	color: #777;
+	font-size: 11px;
+	font-weight: 700;
+	
+	span + span::before {
+		content: ""; /* ❌ 오류 수정: 닫는 따옴표(") 추가 */
+		margin-right: 10px;
+		color: #bdbdbd;
+	}
+    & ~ footer {
+		display: none;
+	}
+}
+    
+}
+

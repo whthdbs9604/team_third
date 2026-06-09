@@ -8,6 +8,10 @@
   text-overflow: ellipsis;
 }
 
+.header_sub {
+  background: white;
+  border-bottom: 1px solid #f6f6f6;
+}
 .header_sub h1 {
   position: relative;
 }
@@ -76,7 +80,7 @@
 }
 
 #menu_wrap {
-  padding: 60px 0px 0;
+  padding: 96px 0px 0;
 }
 #menu_wrap .icon_btn {
   display: grid;
