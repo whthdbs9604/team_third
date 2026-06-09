@@ -1,3 +1,4 @@
+@charset "UTF-8";
 #detail_wrap {
   min-height: 100%;
   padding: 56px 0 0;
@@ -8,7 +9,11 @@
   overflow-x: hidden;
 }
 
-#detail_wrap .summary_section h2,
+#detail_wrap .summary_section h2 {
+  font-family: "bm_dohyeonregular", sans-serif;
+  font-weight: normal;
+}
+
 #detail_wrap .schedule_section h3,
 #detail_wrap .viewing_tip_section h3,
 #detail_wrap .discount_guide_section h3,
@@ -17,8 +22,8 @@
 #detail_wrap .related_section h3,
 #detail_wrap .cast_group h4,
 #detail_wrap .detail_footer > strong {
-  font-family: "bm_dohyeonregular", sans-serif;
-  font-weight: normal;
+  font-family: "Pretendard", sans-serif;
+  font-weight: 700;
 }
 
 #detail_wrap .detail_hero {
@@ -32,9 +37,10 @@
 
 #detail_wrap .detail_hero img {
   width: 100%;
-  aspect-ratio: 16 / 10.5;
+  aspect-ratio: 16/10.5;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #detail_wrap .hero_indicator {
@@ -483,33 +489,35 @@
   line-height: 1.6;
 }
 
-#detail_wrap .discount_grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 10px;
+.discount_grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
 }
 
 #detail_wrap .discount_grid article {
-  padding: 15px 14px;
-  border: 1px solid #ededed;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.035);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border: none;
+  border-bottom: 1px solid #ececec;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
 }
 
 #detail_wrap .discount_grid span {
-  display: block;
-  margin-bottom: 8px;
-  color: #777;
-  font-size: 12px;
-  font-weight: 800;
+  margin-bottom: 0;
+  color: #333;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 #detail_wrap .discount_grid strong {
-  display: block;
   color: #cd2027;
-  font-size: 18px;
-  font-weight: 900;
+  font-size: 15px;
+  font-weight: 700;
 }
 
 #detail_wrap .discount_guide_section > p {
@@ -574,7 +582,8 @@
 #detail_wrap .performance_image_panel img {
   width: 100%;
   display: block;
-  object-fit: contain;
+  -o-object-fit: contain;
+     object-fit: contain;
   background: #fff;
 }
 
@@ -593,10 +602,10 @@
 
 #detail_wrap .cast_group h4 {
   position: relative;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
   padding-left: 11px;
   color: #111;
-  font-size: 23px;
+  font-size: 18px;
   font-weight: 900;
   line-height: 1.2;
 }
@@ -630,10 +639,12 @@
 
 #detail_wrap .cast_group img {
   width: 100%;
-  aspect-ratio: 1 / 1.18;
+  aspect-ratio: 1/1.18;
   display: block;
-  object-fit: cover;
-  object-position: top center;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: top center;
+     object-position: top center;
   background: #f2f2f2;
 }
 
@@ -662,9 +673,10 @@
 
 #detail_wrap .location_section img {
   width: 100%;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16/10;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   border: 1px solid #ededed;
   border-radius: 8px;
   background: #f2f2f2;
@@ -731,18 +743,22 @@
 }
 
 #detail_wrap .review_thumbs {
-  display: block;
-  margin-top: 14px;
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
+  gap: 8px;
+  margin-top: 9px;
 }
 
 #detail_wrap .review_thumbs img {
-  width: 104px;
-  height: 104px;
+  width: 86px;
+  height: 76px;
+  flex: none;
   border: 1px solid #ededed;
   border-radius: 8px;
-  background: #f3f3f3;
-  display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 #detail_wrap .related_section {
@@ -764,9 +780,10 @@
 
 #detail_wrap .related_card img {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 3/4;
   display: block;
-  object-fit: cover;
+  -o-object-fit: cover;
+     object-fit: cover;
   background: #eee;
 }
 
@@ -883,27 +900,32 @@
   -webkit-line-clamp: 3;
 }
 
-#detail_wrap .review_thumbs {
-  margin-top: 9px;
-}
-
-#detail_wrap .review_thumbs img {
-  width: 86px;
-  height: 76px;
-}
-
 #detail_wrap .review_more_btn {
   display: block;
-  width: 100%;
-  margin-top: 14px;
-  padding: 13px 16px;
+
+  min-width: 118px;
+
+  margin: 16px auto 0;
+
+  padding: 11px 18px;
+
   border: 1px solid #e4c8ca;
+
   border-radius: 999px;
+
   background: #fff;
+
   color: #a30910;
-  font-size: 14px;
+
+  font-size: 12px;
+
   font-weight: 900;
+
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.06);
+
+  position: relative;
+
+  z-index: 2;
 }
 
 #detail_wrap .related_section {
@@ -945,23 +967,29 @@
 #detail_wrap .footer_channels {
   display: flex;
   align-items: center;
-  gap: 9px;
-  margin-bottom: 13px;
+  gap: 8px;
+  margin-bottom: 14px;
 }
 
-#detail_wrap .footer_channels a {
-  width: 24px;
-  height: 24px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #ededed;
-  border-radius: 50%;
-  background: #fff;
-  color: #cd2027;
-  font-size: 11px;
-  font-weight: 900;
-  text-align: center;
+#detail_wrap .footer_channels a{
+  min-width:58px;
+  height:28px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  padding:0 12px;
+
+  border:1px solid #ededed;
+  border-radius:999px;
+  background:#fff;
+
+  color:#cd2027;
+  font-size:11px;
+  font-weight:700;
+
+  line-height:1;
 }
 
 #detail_wrap .footer_terms {
@@ -1008,39 +1036,36 @@
   #detail_wrap .date_grid {
     gap: 4px;
   }
-
   #detail_wrap .date_grid li {
     height: 104px;
   }
-
   #detail_wrap .date_grid li em {
     font-size: 9.5px;
   }
-
   #detail_wrap .ticket_right a,
   #detail_wrap .sticky_booking_bar a {
     padding-left: 14px;
     padding-right: 14px;
   }
-
   #detail_wrap .ticket_cut_line {
     right: 120px;
   }
-
   #detail_wrap .ticket_card::before,
   #detail_wrap .ticket_card::after {
     right: 112px;
   }
-
   #detail_wrap .ticket_right {
     gap: 10px;
   }
-
   #detail_wrap .ticket_right strong {
     font-size: 20px;
   }
-
   #detail_wrap .ticket_right a {
     flex-basis: 104px;
   }
 }
+
+
+/*.test-check {
+  color: red;
+}/*# sourceMappingURL=detail.css.map */

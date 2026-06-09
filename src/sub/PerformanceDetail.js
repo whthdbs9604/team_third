@@ -106,43 +106,43 @@ const reviews = [
         id: 'soj***',
         date: '2026.06.12',
         text: '생각보다 진짜 많이 웃었어요ㅋㅋ 배우 호흡도 좋고 마지막까지 재밌게 봤습니다.',
-        image: review1,
+        images:[review1,review5]
     },
     {
         id: 'min***',
         date: '2026.06.09',
         text: '데이트 공연 찾다가 예매했는데 만족! 끝나고 대학로 산책까지 하니까 좋았어요 😊',
-        image: null,
+        image: []
     },
     {
         id: 'yun***',
         date: '2026.06.07',
         text: '소극장이라 배우 표정까지 잘 보여서 몰입감이 좋았습니다. 자리도 생각보다 괜찮았어요.',
-        image: review2,
+          images: [review2],
     },
     {
         id: 'lov***',
         date: '2026.06.05',
         text: '티켓 인증샷 남기기 좋은 공연이에요📸 친구랑 가볍게 보기 딱 좋았습니다.',
-        image: review3,
+        images: [review3],
     },
     {
         id: 'jin***',
         date: '2026.05.30',
         text: '부모님 모시고 봤는데 좋아하셨어요. 후반부 감동이 생각보다 좋았습니다.',
-        image: review4,
+        images: [review4],
     },
     {
         id: 'han***',
         date: '2026.05.24',
         text: '정은 역 배우님 목소리가 너무 매력적이었어요. 다음엔 다른 캐스팅으로 또 보고 싶네요.',
-        image: null,
+        image: []
     },
     {
         id: 'rom***',
         date: '2026.05.18',
         text: '급하게 예매했는데 만족했습니다. 웃긴 장면 많고 러닝타임도 부담 없었어요.',
-        image: review6,
+        images: [review6],
     },
 ];
 
@@ -384,11 +384,13 @@ function ReviewSection() {
                             <em>{review.date}</em>
                         </div>
                         <p>{review.text}</p>
-                        {review.image && (
-                            <div className="review_thumbs">
-                                <img src={review.image} alt={`${review.id} 관람후기 이미지`} />
-                            </div>
-                        )}
+                        {review.images && (
+                           <div className="review_thumbs">
+                             {review.images.map((img,index)=>(
+                                <img key={index} src={img} alt="" />
+                            ))}
+                          </div>
+                         )}
                     </article>
                 ))}
             </div>
@@ -442,7 +444,9 @@ function DetailFooter() {
             <div className="footer_channels">
                 <a href="https://www.facebook.com/daehakroticket" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
                 <a href="https://x.com/daehakroticket" target="_blank" rel="noreferrer" aria-label="X">X</a>
-                <a href="/" onClick={(event) => event.preventDefault()} aria-label="고객센터">CS</a>
+                <a href="/" onClick={(event) => event.preventDefault()} aria-label="고객센터">
+  고객센터
+</a>
             </div>
             <div className="footer_terms">
                 <span>이용약관</span>
