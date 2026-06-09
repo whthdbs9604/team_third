@@ -9,6 +9,10 @@
   text-overflow: ellipsis;
 }
 
+.header_sub {
+  background: white;
+  border-bottom: 1px solid #f6f6f6;
+}
 .header_sub h1 {
   position: relative;
 }

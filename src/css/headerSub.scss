@@ -17,6 +17,7 @@ $title_font: 'bm_dohyeonregular', sans-serif;
 .poster_title{@include title_mix}
 
 .header_sub{
+    background: white; border-bottom: 1px solid #f6f6f6;
     h1{position: relative;}
     button{position: absolute; left: 20px; top: 50%; transform: translateY(-50%);z-index: 2; background: none; border: none; outline: none; padding: 0; }
     button img{vertical-align: middle;}

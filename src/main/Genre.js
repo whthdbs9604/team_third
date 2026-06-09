@@ -11,7 +11,7 @@ export default function Genre() {
         
 
         <div className="genre_btn">
-            <Swiper slidesPerView={'auto'} modules={[FreeMode]} spaceBetween={12} freeMode={true}>
+            <Swiper slidesPerView={'auto'} modules={[FreeMode]} spaceBetween={8} freeMode={true}>
                 <SwiperSlide><span className="active">로맨스</span></SwiperSlide>
                 <SwiperSlide><span>스릴러</span></SwiperSlide>
                 <SwiperSlide><span>공포</span></SwiperSlide>
