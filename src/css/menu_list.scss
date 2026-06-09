@@ -12,9 +12,10 @@
     }
 
     .menu_list{
-        padding: 24px 20px 0;
-        p{color: #A3A3A3; font-size: 14px;}
-        ul li a{padding: 17px 0;font-size: 15px; display: block; font-weight: 500;}
+        padding: 24px 0px 0;
+        p{color: #A3A3A3; font-size: 14px;padding-left: 20px;}
+        ul li a{padding: 17px 20px;font-size: 15px; display: block; font-weight: 500;}
+        ul li:last-child{border-bottom: 1px solid #f6f6f6;}
     }
 
 #menu_wrap{
