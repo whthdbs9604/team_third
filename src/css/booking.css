@@ -13,17 +13,7 @@
 }
 
 /* ===== 헤더 ===== */
-.header_sub {
-    text-align: center;
-    height: 56px;
-    line-height: 56px;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 10;
-    background: #fff;
-    border-bottom: 1px solid #F0F0F0;
-}
+
 
 .header_sub h1 {
     font-size: 16px;
@@ -169,22 +159,23 @@
     border-radius: 100px;
     overflow: hidden;
     background: #fff;
+    height: 34px;
 }
 
 .stepper_btn {
     background: #fff;
     border: none;
     outline: none;
-    width: 24px;
-    height: 26px;
-    font-size: 16px;
+    width: 32px;
+    height: 34px;
+    font-size: 30px;
     color: #333;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
-    padding: 0 4px;
+    padding: 0;
 }
 
 .stepper_btn:active {
@@ -237,8 +228,12 @@
 .input_label {
     font-size: 14px;
     color: #333;
-    min-width: 52px;
+    min-width: 44px;
     flex-shrink: 0;
+}
+
+.required_star {
+    color: #CD2027;
 }
 
 .input_field {
@@ -250,6 +245,11 @@
     color: #111;
     outline: none;
     background: #fff;
+    width: 100%;
+}
+
+.input_field::placeholder {
+    color: #C3C3C3;
 }
 
 .input_field:focus {
@@ -269,10 +269,20 @@
     color: #333;
 }
 
-.total_amount_box strong {
+.total_amount_box strong.total_price_red {
     font-size: 20px;
     font-weight: 700;
-    color: #111;
+    color: #CD2027;
+}
+
+/* 미입력 안내 문구 */
+.missing_message {
+    background: #FFF5F5;
+    color: #CD2027;
+    font-size: 13px;
+    padding: 10px 20px;
+    text-align: center;
+    border-top: 1px solid #FFCDD2;
 }
 
 .payment_btns {
@@ -372,22 +382,34 @@
 
 /* ===== 예매하기 버튼 ===== */
 .booking_submit_wrap {
-    padding: 0;
+    position: fixed;
+    bottom: 20px;
+    left: 0;
+    width: 100%;
+    z-index: 4;
+    padding: 0 20px;
 }
 
 .booking_submit_btn {
     display: block;
     width: 100%;
     padding: 18px;
-    background: #CD2027;
+    background: #C3C3C3;
     color: #fff;
     border: none;
+    border-radius: 3px;
     font-size: 17px;
     font-weight: 700;
-    cursor: pointer;
+    cursor: default;
     letter-spacing: 0.5px;
+    transition: background 0.2s;
 }
 
-.booking_submit_btn:active {
+.booking_submit_btn.active {
+    background: #CD2027;
+    cursor: pointer;
+}
+
+.booking_submit_btn.active:active {
     background: #A30910;
 }
