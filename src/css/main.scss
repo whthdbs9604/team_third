@@ -35,7 +35,7 @@ header{
     .nav_circle{position: absolute;bottom: 28px;left: 50%;transform: translateX(-50%);z-index: -1;}
     .nav_home{transform: translateY(-28px); a{display: inline-block;}}
 }
-//autoplay={{ delay: 5000, disableOnInteraction: false }} modules={[Autoplay]}
+
 #main_slide{
     .swiper-slide{position: relative;color: white;}
     .swiper-slide .main_link{display: block;}
@@ -135,6 +135,7 @@ header{
     ul{display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;}
     li a{display: inline-block; width: 100%;}
     li a>img{display: inline-block; width: 100%; background: #eee;aspect-ratio:3/4;}
+    .rank_title p{font-size: 14px;}
     .rank_title p:nth-child(2){padding: 0 0 8px;}
     .genre_btn .swiper-slide{width: auto;}
     .active{background: $main-dark; color: white; border: none !important;}

@@ -26,7 +26,7 @@ export default function Genre() {
                 <Link to="/detail">
                     <img src={`${process.env.PUBLIC_URL}/img/poster_1.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
-                        <h4 className="poster_title">죽여주는 이야기</h4>
+                        <h4 className="poster_title">운빨 로맨스</h4>
                         <p><span>로맨스 · </span><span>120분</span></p>
                         <p><span><i className="xi-star"></i> 3.5</span><span> | 후기 152</span></p>
                     </div>
@@ -37,7 +37,7 @@ export default function Genre() {
                 <Link to="/detail">
                     <img src={`${process.env.PUBLIC_URL}/img/poster_2.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
-                        <h4 className="poster_title">죽여주는 이야기</h4>
+                        <h4 className="poster_title">옥탑방 고양이</h4>
                         <p><span>로맨스 · </span><span>120분</span></p>
                         <p><span><i className="xi-star"></i> 3.5</span><span> | 후기 152</span></p>
                     </div>
@@ -48,7 +48,7 @@ export default function Genre() {
                 <Link to="/detail">
                     <img src={`${process.env.PUBLIC_URL}/img/poster_3.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
-                        <h4 className="poster_title">죽여주는 이야기</h4>
+                        <h4 className="poster_title">쓰로우</h4>
                         <p><span>로맨스 · </span><span>120분</span></p>
                         <p><span><i className="xi-star"></i> 3.5</span><span> | 후기 152</span></p>
                     </div>
@@ -57,9 +57,9 @@ export default function Genre() {
 
             <li>
                 <Link to="/detail">
-                    <img src={`${process.env.PUBLIC_URL}/img/poster_1.png`} alt="포스터 이미지"/>
+                    <img src={`${process.env.PUBLIC_URL}/img/poster_4.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
-                        <h4 className="poster_title">죽여주는 이야기</h4>
+                        <h4 className="poster_title">숲속 100층짜리 집</h4>
                         <p><span>로맨스 · </span><span>120분</span></p>
                         <p><span><i className="xi-star"></i> 3.5</span><span> | 후기 152</span></p>
                     </div>
