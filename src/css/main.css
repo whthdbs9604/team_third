@@ -379,6 +379,9 @@ header a .logo_img {
   background: #eee;
   aspect-ratio: 3/4;
 }
+#genre .rank_title p {
+  font-size: 14px;
+}
 #genre .rank_title p:nth-child(2) {
   padding: 0 0 8px;
 }

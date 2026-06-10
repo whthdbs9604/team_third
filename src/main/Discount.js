@@ -15,7 +15,7 @@ export default function Discout() {
                     <SwiperSlide>
                         <Link to="/detail" className="discount_link">
                             <img src={`${process.env.PUBLIC_URL}/img/poster_1.png`} alt="포스터 이미지"/>
-                            <p className="poster_title">죽여주는 이야기</p>
+                            <p className="poster_title">운빨 로맨스</p>
                             <div>
                                 <span>18%</span>
                                 <div>
@@ -29,7 +29,7 @@ export default function Discout() {
                     <SwiperSlide>
                         <Link to="/detail" className="discount_link">
                             <img src={`${process.env.PUBLIC_URL}/img/poster_2.png`} alt="포스터 이미지"/>
-                            <p className="poster_title">죽여주는 이야기</p>
+                            <p className="poster_title">옥탑방 고양이</p>
                             <div>
                                 <span>18%</span>
                                 <div>
@@ -43,7 +43,7 @@ export default function Discout() {
                     <SwiperSlide>
                         <Link to="/detail" className="discount_link">
                             <img src={`${process.env.PUBLIC_URL}/img/poster_3.png`} alt="포스터 이미지"/>
-                            <p className="poster_title">죽여주는 이야기</p>
+                            <p className="poster_title">쓰로우</p>
                             <div>
                                 <span>18%</span>
                                 <div>
@@ -57,7 +57,7 @@ export default function Discout() {
                     <SwiperSlide>
                         <Link to="/detail" className="discount_link">
                             <img src={`${process.env.PUBLIC_URL}/img/poster_4.png`} alt="포스터 이미지"/>
-                            <p className="poster_title">죽여주는 이야기</p>
+                            <p className="poster_title">숲속 100층짜리 집</p>
                             <div>
                                 <span>18%</span>
                                 <div>
@@ -71,7 +71,7 @@ export default function Discout() {
                     <SwiperSlide>
                         <Link to="/detail" className="discount_link">
                             <img src={`${process.env.PUBLIC_URL}/img/poster_5.png`} alt="포스터 이미지"/>
-                            <p className="poster_title">죽여주는 이야기</p>
+                            <p className="poster_title">꽃의 비밀</p>
                             <div>
                                 <span>18%</span>
                                 <div>
@@ -85,7 +85,7 @@ export default function Discout() {
                     <SwiperSlide>
                         <Link to="/detail" className="discount_link">
                             <img src={`${process.env.PUBLIC_URL}/img/poster_1.png`} alt="포스터 이미지"/>
-                            <p className="poster_title">죽여주는 이야기</p>
+                            <p className="poster_title">운빨 로맨스</p>
                             <div>
                                 <span>18%</span>
                                 <div>
