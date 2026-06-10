@@ -400,6 +400,9 @@ header a .logo_img {
   border-radius: 100px;
 }
 
+#short_video {
+  position: relative;
+}
 #short_video > p {
   display: flex;
 }
@@ -414,6 +417,12 @@ header a .logo_img {
 }
 #short_video div.swiper {
   margin-top: 24px;
+  position: relative;
+}
+#short_video .swiper-slide {
+  aspect-ratio: 9/16;
+  border-radius: 10px;
+  overflow: hidden;
 }
 #short_video .swiper-slide > a {
   display: block;
@@ -435,6 +444,19 @@ header a .logo_img {
 }
 #short_video .swiper-slide-active {
   transform: scale(1);
+}
+#short_video .video_cover_1, #short_video .video_cover_2 {
+  position: absolute;
+  width: 35%;
+  height: 65%;
+  top: 10%;
+  z-index: 5;
+}
+#short_video .video_cover_1 {
+  left: 0;
+}
+#short_video .video_cover_2 {
+  right: 0;
 }
 
 .detail_footer > strong {

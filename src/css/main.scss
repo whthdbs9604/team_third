@@ -144,16 +144,22 @@ header{
 }
 
 #short_video{
+    position: relative;
     >p{display: flex;}
     p>a{margin-left: auto;}
     p>a img{vertical-align: text-top;}
     >h3, >p{padding: 0 20px;}
-    div.swiper{margin-top: 24px;}
+    div.swiper{margin-top: 24px;position: relative;}
+    .swiper-slide{aspect-ratio: 9/16; border-radius: 10px; overflow: hidden;}
     .swiper-slide>a{display: block;position: relative;}
     .swiper-slide a>img{display: inline-block; width: 100%; background: #eee;}
     a .video_title{position: absolute; bottom: 16px; left: 16px;}
     .swiper-slide{transform: scale(.9); transition: .5s;}
     .swiper-slide-active{transform: scale(1);}
+    .video_cover_1,.video_cover_2{position: absolute; width: 35%; height: 65%; top: 10%;z-index: 5;}
+    .video_cover_1{left: 0;}
+    .video_cover_2{right: 0;}
+    
 }
 
 .detail_footer > strong {
