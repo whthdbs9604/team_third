@@ -8,6 +8,10 @@
   text-overflow: ellipsis;
 }
 
+.header_sub {
+  background: white;
+  border-bottom: 1px solid #f6f6f6;
+}
 .header_sub h1 {
   position: relative;
 }
@@ -20,6 +24,10 @@
   background: none;
   border: none;
   outline: none;
+  padding: 0;
+}
+.header_sub button img {
+  vertical-align: middle;
 }
 
 #login_wrap {

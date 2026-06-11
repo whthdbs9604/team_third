@@ -8,6 +8,20 @@
   text-overflow: ellipsis;
 }
 
+.header_sub {
+  background: white;
+  border-bottom: 1px solid #f6f6f6;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+.header_sub--hidden {
+  transform: translateY(-100%);
+}
 .header_sub h1 {
   position: relative;
 }

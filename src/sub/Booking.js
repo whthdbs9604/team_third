@@ -58,6 +58,7 @@ export default function Booking({ title }) {
 
     const { setHeaderTitle } = useOutletContext();
     const navigate = useNavigate();
+
     useEffect(() => {
         setHeaderTitle(title);
         const nav = document.getElementById('navigation');
@@ -84,6 +85,7 @@ export default function Booking({ title }) {
 
     const [name, setName] = useState('');
     const [tel, setTel] = useState('');
+    const [payment, setPayment] = useState('');
 
     const handleCount = (type, value) => {
         setCounts(prev => ({ ...prev, [type]: value }));
@@ -136,7 +138,7 @@ export default function Booking({ title }) {
                 <h2 className="section_title">예매 정보</h2>
                 <div className="info_row">
                     <span className="info_label">날짜</span>
-                    <span className="info_value">2026년 5월 21일(목) 19시 30분</span>
+                    <span className="info_value">2026년 6월 17일(목) 19시  30분</span>
                 </div>
                 <div className="info_row">
                     <span className="info_label">좌석</span>
@@ -212,14 +214,14 @@ export default function Booking({ title }) {
                 <h2 className="section_title">결제수단</h2>
                 <div className="total_amount_box">
                     <span>총 결제금액</span>
-                    <strong>{totalPrice.toLocaleString()}원</strong>
+                    <strong className="total_price_red">{totalPrice.toLocaleString()}원</strong>
                 </div>
                 <div className="payment_btns">
-                    <button className="payment_btn">신용카드</button>
-                    <button className="payment_btn">실시간계좌이체</button>
+                    <button className={`payment_btn ${payment === '신용카드' ? 'selected' : ''}`} onClick={() => setPayment('신용카드')}>신용카드</button>
+                    <button className={`payment_btn ${payment === '실시간계좌이체' ? 'selected' : ''}`} onClick={() => setPayment('실시간계좌이체')}>실시간계좌이체</button>
                 </div>
                 <div className="payment_btns">
-                    <button className="payment_btn payco_btn">PAYCO</button>
+                    <button className={`payment_btn payco_btn ${payment === 'PAYCO' ? 'selected' : ''}`} onClick={() => setPayment('PAYCO')}>PAYCO</button>
                 </div>
             </section>
 
@@ -257,7 +259,7 @@ export default function Booking({ title }) {
                 <button
                     className={`booking_submit_btn ${isActive ? 'active' : ''}`}
                     disabled={!isActive}
-                    onClick={() => navigate('/booking/complete')}
+                    onClick={() => isActive && navigate('/booking/complete')}
                 >
                     예매하기
                 </button>

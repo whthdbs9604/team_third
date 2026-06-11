@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useOutletContext } from 'react-router-dom';
-import { Outlet } from 'react-router-dom';
+import { Link, useOutletContext, Outlet } from 'react-router-dom';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -32,13 +31,13 @@ import posterSpring from '../assets/detail/봄날의로맨스_포스터.png';
 import posterOffice from '../assets/detail/사내연애보고서_포스터.jpg';
 
 const dates = [
-    { day: '월', date: '9', time: '오후 7:30' },
-    { day: '화', date: '10', time: '오후 7:30' },
-    { day: '수', date: '11', time: '오후 7:30', active: true },
-    { day: '목', date: '12', time: '오후 7:30' },
-    { day: '금', date: '13', time: '오후 7:30' },
-    { day: '토', date: '14', time: '오후 3:00' },
-    { day: '일', date: '15', time: '오후 5:00', holiday: true },
+    { day: '월', time: '-' },
+    { day: '화', time: '-' },
+    { day: '수', time: '오후 7:30', active: true },
+    { day: '목', time: '오후 7:30' },
+    { day: '금', time: '오후 7:30' },
+    { day: '토', time: '오후 3:00' },
+    { day: '일', time: '-', holiday: true },
 ];
 
 const selectedDate = dates.find((item) => item.active);
@@ -107,19 +106,19 @@ const reviews = [
         id: 'soj***',
         date: '2026.06.12',
         text: '생각보다 진짜 많이 웃었어요ㅋㅋ 배우 호흡도 좋고 마지막까지 재밌게 봤습니다.',
-        images: [review1, review5],
+        images:[review1,review5]
     },
     {
         id: 'min***',
         date: '2026.06.09',
         text: '데이트 공연 찾다가 예매했는데 만족! 끝나고 대학로 산책까지 하니까 좋았어요 😊',
-        images: [],
+        image: []
     },
     {
         id: 'yun***',
         date: '2026.06.07',
         text: '소극장이라 배우 표정까지 잘 보여서 몰입감이 좋았습니다. 자리도 생각보다 괜찮았어요.',
-        images: [review2],
+          images: [review2],
     },
     {
         id: 'lov***',
@@ -137,7 +136,7 @@ const reviews = [
         id: 'han***',
         date: '2026.05.24',
         text: '정은 역 배우님 목소리가 너무 매력적이었어요. 다음엔 다른 캐스팅으로 또 보고 싶네요.',
-        images: [],
+        image: []
     },
     {
         id: 'rom***',
@@ -220,15 +219,10 @@ function ScheduleSection() {
                     {dates.map((item) => (
                         <li className={`${item.active ? 'active' : ''} ${item.holiday ? 'holiday' : ''}`} key={item.date}>
                             <span>{item.day}</span>
-                            <strong>{item.date}</strong>
                             <em>{item.time}</em>
                         </li>
                     ))}
                 </ul>
-            </div>
-            <div className="selected_schedule_summary">
-                <span>선택 회차</span>
-                <strong>2026.06.{selectedDate.date} ({selectedDate.day}) {selectedDate.time}</strong>
             </div>
         </section>
     );
@@ -240,13 +234,13 @@ function TicketSection() {
             <div className="ticket_card">
                 <div className="ticket_cut_line" />
                 <div className="ticket_left">
-                    <strong>전석 동일가 · 균일석</strong>
-
+                    <span>전석 동일가</span>
+                    <strong>균일석</strong>
+                    <em>잔여 18석 · 실시간 예매 가능</em>
                 </div>
                 <div className="ticket_right">
                     <strong>30,000원</strong>
-                    <Link to="calendar">예매 하기</Link>
-                    <Outlet />
+                    <Link to="/detail/calendar">예매하기</Link>
                 </div>
             </div>
         </section>
@@ -385,16 +379,12 @@ function ReviewSection() {
                         </div>
                         <p>{review.text}</p>
                         {review.images && (
-                            <div className="review_thumbs">
-                               {review.images.map((img, index) => (
-                               <img
-                                   key={index}
-                                   src={img}
-                                   alt={`${review.id} 관람후기 이미지 ${index + 1}`}
-                                    />
-        ))}
-    </div>
-)}
+                           <div className="review_thumbs">
+                             {review.images.map((img,index)=>(
+                                <img key={index} src={img} alt="" />
+                            ))}
+                          </div>
+                         )}
                     </article>
                 ))}
             </div>
@@ -448,15 +438,9 @@ function DetailFooter() {
             <div className="footer_channels">
                 <a href="https://www.facebook.com/daehakroticket" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
                 <a href="https://x.com/daehakroticket" target="_blank" rel="noreferrer" aria-label="X">X</a>
-                <a
-  className="customer_center"
-  href="/"
-  onClick={(event) => event.preventDefault()}
-  aria-label="고객센터"
->
+                <a href="/" onClick={(event) => event.preventDefault()} aria-label="고객센터">
   고객센터
 </a>
-
             </div>
             <div className="footer_terms">
                 <span>이용약관</span>
@@ -503,7 +487,7 @@ function StickyBookingBar() {
                 <span>균일석</span>
                 <strong>30,000원</strong>
             </div>
-            <Link to="/booking">예매하기</Link>
+            <Link to="/detail/calendar">예매하기</Link>
         </div>
     );
 }
@@ -531,6 +515,7 @@ export default function PerformanceDetail({ title }) {
             <RelatedSection />
             <DetailFooter />
             <StickyBookingBar />
+            <Outlet />
         </div>
     );
 }

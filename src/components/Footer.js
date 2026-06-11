@@ -1,21 +1,33 @@
-import { Link } from "react-router-dom";
 
 export default function Footer() {
       return (
-            <footer>
-                <img src={`${process.env.PUBLIC_URL}/img/logo.png`} alt="로고" />
-                <p>서울특별시 종로구 대학로 12길</p>
-                <p>사업자등록번호 123-45-67890</p>
-                <p>고객센터 1588 - 0000 (평일 9~18시)</p>
-
-                <div>
-                    <Link to="#">이용약관</Link>
-                    <Link to="#">개인정보 처리방침</Link>
-                    <Link to="#">청소년 보호정책</Link>
-                    <Link to="#">사업자 정보</Link>
+            <footer className="detail_footer">
+                <strong>대학로티켓</strong>
+                <p className="footer_intro">대한민국 대표 공연 예매 플랫폼</p>
+                <div className="footer_info">
+                    <p>서울특별시 종로구 대학로 12길</p>
+                    <p>고객센터 1588-0000</p>
+                    <p>운영시간 평일 09:00 ~ 18:00</p>
                 </div>
+                <div className="footer_channels">
+                    <a href="https://www.facebook.com/daehakroticket" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
+                    <a href="https://x.com/daehakroticket" target="_blank" rel="noreferrer" aria-label="X">X</a>
+                    <a
+                        className="customer_center"
+                        href="/"
+                        onClick={(event) => event.preventDefault()}
+                        aria-label="고객센터"
+                        >
+                        <i className="xi-call"></i>
+                        </a>
 
-                <small>©2016 대학로티켓닷컴 ALL Right reserved.</small>
+                </div>
+                <div className="footer_terms">
+                    <span>이용약관</span>
+                    <span>개인정보처리방침</span>
+                    <span>청소년보호정책</span>
+                </div>
+                <small>© 2026 Daehakro Ticket</small>
             </footer>
       )
 }

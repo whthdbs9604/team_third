@@ -8,6 +8,10 @@
   text-overflow: ellipsis;
 }
 
+.header_sub {
+  background: white;
+  border-bottom: 1px solid #f6f6f6;
+}
 .header_sub h1 {
   position: relative;
 }
@@ -20,6 +24,10 @@
   background: none;
   border: none;
   outline: none;
+  padding: 0;
+}
+.header_sub button img {
+  vertical-align: middle;
 }
 
 .before_login_top {
@@ -58,21 +66,25 @@
 }
 
 .menu_list {
-  padding: 24px 20px 0;
+  padding: 24px 0px 0;
 }
 .menu_list p {
   color: #A3A3A3;
   font-size: 14px;
+  padding-left: 20px;
 }
 .menu_list ul li a {
-  padding: 17px 0;
+  padding: 17px 20px;
   font-size: 15px;
   display: block;
   font-weight: 500;
 }
+.menu_list ul li:last-child {
+  border-bottom: 1px solid #f6f6f6;
+}
 
 #menu_wrap {
-  padding: 60px 0px 0;
+  padding: 96px 0px 0;
 }
 #menu_wrap .icon_btn {
   display: grid;

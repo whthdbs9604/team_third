@@ -65,17 +65,27 @@
 }
 
 .navBtn {
-  width: 32px;
-  height: 32px;
-  border: 1px solid #d4d4d4;
-  background: transparent;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: #3a3a3a;
   cursor: pointer;
-  border-radius: 50%;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #787878;
+  color: #fff;
   transition: all 0.2s;
+}
+
+
+.navBtn:hover {
+  background: #4a4a4a;
+  transform: scale(1.05);
+}
+
+.navBtn:active {
+  transform: scale(0.95);
 }
 
 .monthTitle {
@@ -95,7 +105,7 @@
   border: none;
   background: transparent;
   cursor: pointer;
-  color: #94a3b8;
+  color: #3a3a3a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -233,11 +243,11 @@
 
 
 .grayDot {
-  background-color: #8e8e93; 
+  background-color: #cd2027; 
 }
 
-.seatsNumOk  { font-weight: 600; color: #1D9E75; }
-.seatsNumFew { font-weight: 600; color: #e05a5a; }
+.seatsNumOk  { font-weight: 600; color: #2c3e6b; }
+.seatsNumFew { font-weight: 600; color: #cd2027; }
 
 .dnumDisabled {
   color: #d0d0d0;
@@ -255,7 +265,7 @@
 }
 
 .wdaySun {
-  color: #e05a5a;
+  color: #cd2027;
 }
 
 .dnumSun {
@@ -269,16 +279,67 @@
 }
 
 .dnumSelected {
-  background: #8e8e93;
+  background: #cd2027;
   color: #fff;
   font-weight: 500;
   cursor: pointer;
 }
 .dnumSelected:hover {
-  background: #333;
+  background: #cd2027;
 }
 
 .navBtnDisabled {
-  border-color: #e4e4e4;
-  color: #cbd5e1;
+  background: #f0f0f0;
+  color: #ccc;
+  cursor: default;
+  transform: none;
+  pointer-events: none;
+}
+
+.dnumToday {
+  color: #cd2027;
+  font-weight: 700;
+  position: relative;
+}
+
+.dnumToday::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #cd2027;
+}
+
+.slideOut {
+  animation: slideOut 0.2s ease forwards;
+}
+.slideOutRight {
+  animation: slideOutRight 0.2s ease forwards;
+}
+.slideInRight {
+  animation: slideInRight 0.25s ease forwards;
+}
+.slideInLeft {
+  animation: slideInLeft 0.25s ease forwards;
+}
+
+@keyframes slideOut {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(-40px); }
+}
+@keyframes slideOutRight {
+  from { opacity: 1; transform: translateX(0); }
+  to   { opacity: 0; transform: translateX(40px); }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
 }

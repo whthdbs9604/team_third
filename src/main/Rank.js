@@ -14,8 +14,8 @@ export default function Rank() {
                     <img src={`${process.env.PUBLIC_URL}/img/poster_1.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
                         <h4>운빨 로맨스</h4>
-                        <p><span>#코미디</span><span><img src={`${process.env.PUBLIC_URL}/img/location_img.svg`} alt="위치아이콘"/>지인시어터</span></p>
-                        <p><span><img src={`${process.env.PUBLIC_URL}/img/star_img.svg`} alt="별아이콘"/>3.5</span><span>후기 152</span></p>
+                        <p><span>#코미디 #로맨스</span><span> <i className="xi-time-o"></i> 135분</span></p>
+                        <p><span><i className="xi-star"></i> 3.5</span><span> | 후기 152</span></p>
                         <p><b>16,400원</b></p>
                     </div>
                 </Link>
@@ -26,9 +26,9 @@ export default function Rank() {
                     <span>2</span>
                     <img src={`${process.env.PUBLIC_URL}/img/poster_2.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
-                        <h4>죽여주는 이야기</h4>
-                        <p><span>#코미디</span><span><img src={`${process.env.PUBLIC_URL}/img/location_img.svg`} alt="위치아이콘"/>지인시어터</span></p>
-                        <p><span><img src={`${process.env.PUBLIC_URL}/img/star_img.svg`} alt="별아이콘"/>3.5</span><span>후기 152</span></p>
+                        <h4>옥탑방 고양이</h4>
+                        <p><span>#코미디 #로맨스</span><span> <i className="xi-time-o"></i> 135분</span></p>
+                        <p><span><i className="xi-star"></i> 3.5</span><span> | 후기 152</span></p>
                         <p><b>16,400원</b></p>
                     </div>
                 </Link>
@@ -39,9 +39,9 @@ export default function Rank() {
                     <span>3</span>
                     <img src={`${process.env.PUBLIC_URL}/img/poster_3.png`} alt="포스터 이미지"/>
                     <div className="rank_title">
-                        <h4>죽여주는 이야기</h4>
-                        <p><span>#코미디</span><span><img src={`${process.env.PUBLIC_URL}/img/location_img.svg`} alt="위치아이콘"/>지인시어터</span></p>
-                        <p><span><img src={`${process.env.PUBLIC_URL}/img/star_img.svg`} alt="별아이콘"/>3.5</span><span>후기 152</span></p>
+                        <h4>쓰로우</h4>
+                        <p><span>#코미디 #로맨스</span><span> <i className="xi-time-o"></i> 135분</span></p>
+                        <p><span><i className="xi-star"></i> 3.5</span><span> | 후기 152</span></p>
                         <p><b>16,400원</b></p>
                     </div>
                 </Link>
