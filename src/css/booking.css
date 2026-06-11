@@ -307,6 +307,12 @@
     background: #F6F6F6;
 }
 
+.payment_btn.selected {
+    background: #CD2027;
+    border-color: #CD2027;
+    color: #fff;
+}
+
 .payco_btn {
     max-width: calc(50% - 4px);
 }

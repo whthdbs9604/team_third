@@ -1,0 +1,177 @@
+/* search.css */
+
+#search_wrap {
+    padding: 60px 0 100px;
+}
+
+/* ===== 검색창 ===== */
+.search_input_box {
+    display: flex;
+    align-items: center;
+    margin: 16px 20px;
+    background: #F6F6F6;
+    border-radius: 100px;
+    padding: 12px 16px;
+    gap: 8px;
+}
+
+.search_icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    opacity: 0.4;
+}
+
+.search_input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 15px;
+    color: #111;
+}
+
+.search_input::placeholder {
+    color: #C3C3C3;
+}
+
+.search_clear_btn {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* ===== 섹션 공통 ===== */
+.search_section {
+    padding: 20px 20px 0;
+    margin-bottom: 28px;
+}
+
+.search_section_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.search_section_title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+    margin-bottom: 16px;
+}
+
+.search_section_header .search_section_title {
+    margin-bottom: 0;
+}
+
+.search_delete_all {
+    font-size: 13px;
+    color: #787878;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+/* ===== 최근 검색어 ===== */
+.recent_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recent_item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.recent_item:last-child {
+    border-bottom: none;
+}
+
+.recent_icon {
+    flex-shrink: 0;
+}
+
+.recent_keyword {
+    flex: 1;
+    font-size: 15px;
+    color: #333;
+}
+
+.recent_delete_btn {
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+/* ===== 인기 검색어 ===== */
+.popular_list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.popular_item {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid #F0F0F0;
+}
+
+.popular_item:last-child {
+    border-bottom: none;
+}
+
+.popular_rank {
+    font-size: 15px;
+    font-weight: 700;
+    color: #C3C3C3;
+    min-width: 18px;
+    text-align: center;
+}
+
+.popular_rank.highlight {
+    color: #CD2027;
+}
+
+.popular_keyword {
+    flex: 1;
+    font-size: 15px;
+    color: #111;
+}
+
+.popular_trend {
+    font-size: 13px;
+    min-width: 40px;
+    text-align: right;
+    color: #C3C3C3;
+}
+
+.popular_trend.up {
+    color: #CD2027;
+}
+
+.popular_trend.down {
+    color: #4D9FFF;
+}
+
+.popular_trend.none {
+    color: #C3C3C3;
+}

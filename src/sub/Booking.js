@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useOutletContext } from 'react-router-dom';
+import { useOutletContext, useNavigate } from 'react-router-dom';
 import '../css/booking.css';
 
 function CheckIcon({ color }) {
@@ -57,6 +57,8 @@ function Stepper({ value, onChange }) {
 export default function Booking({ title }) {
 
     const { setHeaderTitle } = useOutletContext();
+    const navigate = useNavigate();
+
     useEffect(() => {
         setHeaderTitle(title);
         const nav = document.getElementById('navigation');
@@ -83,6 +85,7 @@ export default function Booking({ title }) {
 
     const [name, setName] = useState('');
     const [tel, setTel] = useState('');
+    const [payment, setPayment] = useState('');
 
     const handleCount = (type, value) => {
         setCounts(prev => ({ ...prev, [type]: value }));
@@ -214,11 +217,11 @@ export default function Booking({ title }) {
                     <strong className="total_price_red">{totalPrice.toLocaleString()}원</strong>
                 </div>
                 <div className="payment_btns">
-                    <button className="payment_btn">신용카드</button>
-                    <button className="payment_btn">실시간계좌이체</button>
+                    <button className={`payment_btn ${payment === '신용카드' ? 'selected' : ''}`} onClick={() => setPayment('신용카드')}>신용카드</button>
+                    <button className={`payment_btn ${payment === '실시간계좌이체' ? 'selected' : ''}`} onClick={() => setPayment('실시간계좌이체')}>실시간계좌이체</button>
                 </div>
                 <div className="payment_btns">
-                    <button className="payment_btn payco_btn">PAYCO</button>
+                    <button className={`payment_btn payco_btn ${payment === 'PAYCO' ? 'selected' : ''}`} onClick={() => setPayment('PAYCO')}>PAYCO</button>
                 </div>
             </section>
 
@@ -256,6 +259,7 @@ export default function Booking({ title }) {
                 <button
                     className={`booking_submit_btn ${isActive ? 'active' : ''}`}
                     disabled={!isActive}
+                    onClick={() => isActive && navigate('/booking/complete')}
                 >
                     예매하기
                 </button>

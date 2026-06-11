@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Link, useOutletContext } from 'react-router-dom';
+import { Link, useOutletContext, Outlet } from 'react-router-dom';
 import { Autoplay } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -246,7 +246,7 @@ function TicketSection() {
                 </div>
                 <div className="ticket_right">
                     <strong>30,000원</strong>
-                    <Link to="/booking">예매하기</Link>
+                    <Link to="/detail/calendar">예매하기</Link>
                 </div>
             </div>
         </section>
@@ -493,7 +493,7 @@ function StickyBookingBar() {
                 <span>균일석</span>
                 <strong>30,000원</strong>
             </div>
-            <Link to="/booking">예매하기</Link>
+            <Link to="/detail/calendar">예매하기</Link>
         </div>
     );
 }
@@ -521,6 +521,7 @@ export default function PerformanceDetail({ title }) {
             <RelatedSection />
             <DetailFooter />
             <StickyBookingBar />
+            <Outlet />
         </div>
     );
 }
