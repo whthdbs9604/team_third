@@ -22,19 +22,16 @@ export default function BottomSheetCalendar({ seatInfo = {}, onConfirm }) {
     date: new Date().getDate(),
   };
 
-  // 💡 [수정] isOpen 상태 변수를 완전히 지웠습니다! 
-  // 이 컴포넌트가 주소창 매칭에 의해 로드되었다는 것 자체가 "열려야 한다"는 뜻이기 때문입니다.
   const [curYear, setCurYear] = useState(today.year);
   const [curMonth, setCurMonth] = useState(today.month);
   const [selected, setSelected] = useState(null);
+  const [slideDir, setSlideDir] = useState(null);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   const sheetRef = useRef(null);
   const dragRef = useRef({ startY: 0, startTime: 0, dragging: false });
 
-  // X버튼이나 배경 클릭 시 부모 주소로 돌아가 달력을 완전히 파괴(닫기)시킵니다.
-  const closeCalendar = () => {
-    navigate("/detail");
-  };
+  const closeCalendar = () => navigate("/detail");
 
   function onPointerDown(e) {
     dragRef.current = { startY: e.clientY, startTime: Date.now(), dragging: true };
@@ -64,8 +61,20 @@ export default function BottomSheetCalendar({ seatInfo = {}, onConfirm }) {
     if (m < 0) { y--; m = 11; }
     if (m > 11) { y++; m = 0; }
     if (y < today.year || (y === today.year && m < today.month)) return;
-    setCurYear(y);
-    setCurMonth(m);
+    if (isAnimating) return;
+
+    setIsAnimating(true);
+    setSlideDir(delta > 0 ? 'left' : 'right');
+
+    setTimeout(() => {
+      setCurYear(y);
+      setCurMonth(m);
+      setSlideDir(delta > 0 ? 'enterRight' : 'enterLeft');
+      setTimeout(() => {
+        setSlideDir(null);
+        setIsAnimating(false);
+      }, 250);
+    }, 200);
   }
 
   function buildDays() {
@@ -79,13 +88,15 @@ export default function BottomSheetCalendar({ seatInfo = {}, onConfirm }) {
       const active = !past && avail;
       const isSel = selected && selected.year === curYear && selected.month === curMonth && selected.date === d;
       const dow = new Date(curYear, curMonth, d).getDay();
-      cells.push({ type: "date", date: d, dow, active, isSel, key: `d-${d}` });
+      const isToday = curYear === today.year && curMonth === today.month && d === today.date;
+      cells.push({ type: "date", date: d, dow, active, isSel, isToday, key: `d-${d}` });
     }
     return cells;
   }
 
-  function getDnumClass(active, isSel, dow) {
+  function getDnumClass(active, isSel, dow, isToday) {
     if (isSel)     return `${styles.dnum} ${styles.dnumSelected}`;
+    if (isToday)   return `${styles.dnum} ${styles.dnumToday}`;
     if (!active)   return `${styles.dnum} ${styles.dnumDisabled}`;
     if (dow === 0) return `${styles.dnum} ${styles.dnumSun}`;
     return `${styles.dnum} ${styles.dnumActive}`;
@@ -98,17 +109,17 @@ export default function BottomSheetCalendar({ seatInfo = {}, onConfirm }) {
     const seats = seatInfo[dateKey(selected.year, selected.month, selected.date)] || 0;
     const dt = new Date(selected.year, selected.month, selected.date);
     const few = seats <= 5;
-    
+    const isSat = dt.getDay() === 6;
+
     function handleNext() {
       onConfirm?.(selected);
-      // 부모 라우터 구조를 완전히 탈출하여 최상위 절대 경로인 /booking 페이지로 이동
       navigate("/booking", { state: { selectedDate: selected } });
     }
 
     return (
       <button className={styles.footerActionBtn} onClick={handleNext}>
         <span className={styles.footerDate}>
-          {selected.year}년 {MONTHS[selected.month]} {selected.date}일 ({DAYS_KO[dt.getDay()]}) 19시
+          {selected.year}년 {MONTHS[selected.month]} {selected.date}일 ({DAYS_KO[dt.getDay()]}) {isSat ? '15시' : '19시 30분'}
         </span>
         <span className={styles.footerSeats}>
           전석 <span className={few ? styles.seatsNumFew : styles.seatsNumOk}>{seats}석</span> 남음
@@ -119,13 +130,23 @@ export default function BottomSheetCalendar({ seatInfo = {}, onConfirm }) {
 
   const isAtBase = curYear === today.year && curMonth === today.month;
 
-  // 💡 [수정] isOpen && 가 없어도 이제 무조건 렌더링되며, 닫힐 때는 주소창이 바뀌어 알아서 소멸합니다.
+  const slideClass =
+    slideDir === 'left'       ? styles.slideOut :
+    slideDir === 'right'      ? styles.slideOutRight :
+    slideDir === 'enterRight' ? styles.slideInRight :
+    slideDir === 'enterLeft'  ? styles.slideInLeft : '';
+
   return createPortal(
     <>
       <div className={styles.overlay} onClick={closeCalendar} />
 
       <div ref={sheetRef} className={styles.sheet} style={{ transform: "translateY(0)" }}>
-        <div className={styles.handleWrap} onPointerDown={onPointerDown} onPointerMove={onPointerMove} onPointerUp={onPointerUp}>
+        <div
+          className={styles.handleWrap}
+          onPointerDown={onPointerDown}
+          onPointerMove={onPointerMove}
+          onPointerUp={onPointerUp}
+        >
           <div className={styles.handle} />
         </div>
 
@@ -139,13 +160,13 @@ export default function BottomSheetCalendar({ seatInfo = {}, onConfirm }) {
               onClick={() => changeMonth(-1)}
               disabled={isAtBase}
             >
-              <ChevronLeft size={18} strokeWidth={1} />
+              <ChevronLeft size={18} strokeWidth={2} />
             </button>
             <span className={styles.monthTitle}>
               {curYear}년 {MONTHS[curMonth]}
             </span>
             <button className={styles.navBtn} onClick={() => changeMonth(1)}>
-              <ChevronRight size={18} strokeWidth={1} />
+              <ChevronRight size={18} strokeWidth={2} />
             </button>
           </div>
         </div>
@@ -158,10 +179,10 @@ export default function BottomSheetCalendar({ seatInfo = {}, onConfirm }) {
           ))}
         </div>
 
-        <div className={styles.calGrid}>
+        <div className={`${styles.calGrid} ${slideClass}`}>
           {buildDays().map((cell) => {
             if (cell.type === "empty") return <div key={cell.key} />;
-            const { date, dow, active, isSel } = cell;
+            const { date, dow, active, isSel, isToday } = cell;
             return (
               <div key={cell.key} className={styles.dcell}>
                 <button
@@ -169,7 +190,7 @@ export default function BottomSheetCalendar({ seatInfo = {}, onConfirm }) {
                   onClick={() => {
                     if (active) setSelected({ year: curYear, month: curMonth, date });
                   }}
-                  className={getDnumClass(active, isSel, dow)}
+                  className={getDnumClass(active, isSel, dow, isToday)}
                 >
                   {date}
                 </button>

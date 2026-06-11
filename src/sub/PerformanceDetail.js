@@ -31,13 +31,13 @@ import posterSpring from '../assets/detail/봄날의로맨스_포스터.png';
 import posterOffice from '../assets/detail/사내연애보고서_포스터.jpg';
 
 const dates = [
-    { day: '월', date: '9', time: '오후 7:30' },
-    { day: '화', date: '10', time: '오후 7:30' },
-    { day: '수', date: '11', time: '오후 7:30', active: true },
-    { day: '목', date: '12', time: '오후 7:30' },
-    { day: '금', date: '13', time: '오후 7:30' },
-    { day: '토', date: '14', time: '오후 3:00' },
-    { day: '일', date: '15', time: '오후 5:00', holiday: true },
+    { day: '월', time: '-' },
+    { day: '화', time: '-' },
+    { day: '수', time: '오후 7:30', active: true },
+    { day: '목', time: '오후 7:30' },
+    { day: '금', time: '오후 7:30' },
+    { day: '토', time: '오후 3:00' },
+    { day: '일', time: '-', holiday: true },
 ];
 
 const selectedDate = dates.find((item) => item.active);
@@ -219,16 +219,10 @@ function ScheduleSection() {
                     {dates.map((item) => (
                         <li className={`${item.active ? 'active' : ''} ${item.holiday ? 'holiday' : ''}`} key={item.date}>
                             <span>{item.day}</span>
-                            <strong>{item.date}</strong>
                             <em>{item.time}</em>
                         </li>
                     ))}
                 </ul>
-            </div>
-            <div className="selected_schedule_summary">
-                <span>선택 회차</span>
-                <strong>2026.06.{selectedDate.date} ({selectedDate.day}) {selectedDate.time}</strong>
-                <em>잔여 18석 · 균일석 예매 가능</em>
             </div>
         </section>
     );

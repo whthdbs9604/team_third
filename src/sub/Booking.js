@@ -138,7 +138,7 @@ export default function Booking({ title }) {
                 <h2 className="section_title">예매 정보</h2>
                 <div className="info_row">
                     <span className="info_label">날짜</span>
-                    <span className="info_value">2026년 5월 21일(목) 19시 30분</span>
+                    <span className="info_value">2026년 6월 17일(목) 19시  30분</span>
                 </div>
                 <div className="info_row">
                     <span className="info_label">좌석</span>
