@@ -24,7 +24,7 @@ export default function MyPage({title}) {
             </div>
 
             <div className='event_banner'>
-                <Link to="/"></Link>
+                <Link to="/"><img src={`${process.env.PUBLIC_URL}/img/ticket_event.png`} alt="티켓이벤트" /></Link>
             </div>
 
             <div className='menu_list'>
