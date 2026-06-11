@@ -2,13 +2,13 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css/pagination';
 import 'swiper/css';
-import { Pagination } from 'swiper/modules';
+import { Autoplay, Pagination } from 'swiper/modules';
 
 export default function MainSlide() {
     return(
         <div id="main_slide">
             <div className="swiper_box">
-                <Swiper slidesPerView={1} loop={true} pagination={true} modules={[Pagination]}>
+                <Swiper slidesPerView={1} loop={true} pagination={true} modules={[Autoplay, Pagination]}autoplay={{delay: 5000, disableOnInteraction: false,pauseOnMouseEnter: true,}}>
                     <SwiperSlide>
                         <Link to="/detail" className="main_link">
                             <img src={`${process.env.PUBLIC_URL}/img/main_slide_1.png`} alt="메인 슬라이드 이미지" />
